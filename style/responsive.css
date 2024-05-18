@@ -32,4 +32,13 @@
     nav {
         margin-top: -1%;
     }
+
+    #dashboard-controller img {
+        width: 65%;
+        padding-left: 2%;
+    }
+
+    #dashboard-controller button {
+        width: 66%;
+    }
 }

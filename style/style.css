@@ -18,9 +18,25 @@ html {
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
-    background-color: white;
+    /* background-color: rgb(221, 197, 221); */
 }
 
-.text-light:hover{
+.text-light:hover {
     color: black;
+}
+
+#dashboard-controller {
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    width: 30%;
+    height: 580px;
+    background-color: rgb(221, 197, 221);
+}
+
+#dashboard-controller button {
+    border: 1px solid black;
+    border-radius: 20px;
 }
