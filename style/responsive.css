@@ -1,44 +1,114 @@
 @media screen and (min-width:0px) and (max-width:350px) {
-    nav {
-        margin-top: -5%;
+    .navbar .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 70px;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
-    nav {
-        margin-top: -2.8%;
+    .navbar .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 70px;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
-    nav {
-        margin-top: -2%;
+    .navbar .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 70px;
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
     }
 }
 
-@media screen and (min-width:768px) and (max-width:991px) {
-    nav {
-        margin-top: -1.3%;
-    }
-}
+@media screen and (min-width:768px) and (max-width:991px) {}
 
-@media screen and (min-width:992px) and (max-width:1199px) {
-    nav {
-        margin-top: -1%;
-    }
-}
+@media screen and (min-width:992px) and (max-width:1199px) {}
 
 @media screen and (min-width:1200px) {
-    nav {
-        margin-top: -1%;
-    }
-
     #dashboard-controller img {
-        width: 65%;
-        padding-left: 2%;
+        padding-top: 20%;
+        width: 75%;
+        padding-left: 10%;
     }
 
-    #dashboard-controller button {
-        width: 66%;
+    .icon-button {
+        width: 85%;
+        height: 150px;
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+
+    .icon-button i {
+        margin-right: 30%;
+    }
+
+    #dashboard-container {
+        display: flex;
+    }
+
+    #time-lbl {
+        width: 600px;
+        height: 150px;
+        border: 1px solid black;
+        margin-top: 10%;
+        text-align: center;
+    }
+
+    #welcome-admin {
+        width: 600px;
+        height: 50px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    .bar-chart {
+        width: 600px;
+        height: 375px;
+        margin: auto;
+        padding: 20px;
     }
 }
