@@ -25,6 +25,7 @@ function getDate() {
     "Friday",
     "Saturday",
   ];
+  
   const months = [
     "Jan",
     "Feb",
