@@ -90,24 +90,20 @@
         display: flex;
     }
 
-    #time-lbl {
+    #datetime-container {
         width: 600px;
-        height: 150px;
-        border: 1px solid black;
-        margin-top: 10%;
-        text-align: center;
+        height: 100px;
     }
 
     #welcome-admin {
         width: 600px;
         height: 50px;
-        border: 1px solid black;
         text-align: center;
     }
 
     .bar-chart {
         width: 600px;
-        height: 375px;
+        height: 435px;
         margin: auto;
         padding: 20px;
     }

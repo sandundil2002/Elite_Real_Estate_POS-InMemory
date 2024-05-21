@@ -109,14 +109,28 @@ html {
     border: none;
 }
 
-#welcome-admin {
-    font-family: "Poetsen One", sans-serif;
-    font-size: 35px;
+#datetime-container {
+    margin-top: 8.4%;
+    text-align: center;
 }
 
-#chart-title{
+#time-lbl {
+    font-size: 60px;
+}
+
+#date-lbl {
+    font-size: 30px;
+    font-style: italic;
+}
+
+#welcome-admin {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 50px;
+}
+
+#chart-title {
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .bar-chart {
