@@ -162,8 +162,11 @@ html {
 
 #appointment-container{
     margin-top: 3.5%;
+}
+
+#appointment-lbl{
     display: flex;
-    gap: 1%;
+        gap: 1%;
 }
 
 .top-lables{
@@ -181,4 +184,39 @@ html {
     width: 25%;
 }
 
+#property-title{
+    text-align: center;
+    font-weight: 500;
+}
 
+#appointment-data{
+    margin-top: 3%;
+    margin-left: 2%;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+th, td{
+    text-align: center;
+    height: 40px;
+    border: 1px solid black;
+}
+
+thead th{
+    background-color: #ccc;
+    color: black;
+    width: 25%;
+    font-style: italic;
+    
+}
+
+tbody tr:nth-child(odd){
+    background-color: #e3ecf5;
+}
+
+tbody tr:nth-child(even){
+    background-color: #cdd6df;
+}
