@@ -30,7 +30,6 @@ html {
     align-items: center;
     padding: 10px 20px;
     background-color: #333;
-    position: fixed;
     width: 100%;
 }
 
@@ -43,7 +42,7 @@ html {
     cursor: default;
 }
 
-.navbar .nav-links {
+.nav-links {
     list-style: none;
     display: flex;
 }
