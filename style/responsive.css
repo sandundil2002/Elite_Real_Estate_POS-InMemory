@@ -1,14 +1,14 @@
 @media screen and (min-width:0px) and (max-width:350px) {
+    .navbar {
+        position: static;
+    }
+
     .navbar .nav-links {
-        position: absolute;
-        right: 0;
-        height: 100vh;
-        top: 70px;
-        background-color: #333;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
         display: none;
+    }
+
+    #logo {
+        font-size: 15px;
     }
 
     .navbar .nav-links li {
@@ -17,20 +17,103 @@
 
     .hamburger {
         display: flex;
+    }
+
+    #dashboard-controller {
+        display: none;
+    }
+
+    #dashboard-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #datetime-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #time-lbl {
+        font-size: 23px;
+    }
+
+    #date-lbl {
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    #welcome-admin {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    #chart-title {
+        font-size: 20px;
+    }
+
+    .bar-chart {
+        width: 100%;
+        height: 500px;
+        margin: auto;
+        padding: 18px;
+    }
+
+    .bar {
+        width: 10%;
+    }
+
+    .chart-titles {
+        font-size: 2px;
+    }
+
+    #appointment-container {
+        margin-top: 5%;
+    }
+
+    .top-lables {
+        width: 49%;
+        height: auto;
+        font-size: 10px;
+    }
+
+    .lable-img {
+        width: 25%;
+    }
+
+    #appointment-title {
+        margin-top: -8%;
+        font-size: 20px;
+    }
+
+    #appointment-data {
+        width: 98%;
+    }
+
+    thead th {
+        font-size: 12px;
+        height: 25px;
+    }
+
+    th,
+    td {
+        height: 20px;
+        font-size: 12px;
     }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
+    .navbar {
+        position: static;
+    }
+
     .navbar .nav-links {
-        position: absolute;
-        right: 0;
-        height: 100vh;
-        top: 70px;
-        background-color: #333;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
         display: none;
+    }
+
+    #logo {
+        font-size: 15px;
     }
 
     .navbar .nav-links li {
@@ -39,19 +122,99 @@
 
     .hamburger {
         display: flex;
+        font-size: 10PX;
+    }
+
+    #dashboard-controller {
+        display: none;
+    }
+
+    #dashboard-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #datetime-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #time-lbl {
+        font-size: 30px;
+    }
+
+    #date-lbl {
+        font-size: 15px;
+        font-style: italic;
+    }
+
+    #welcome-admin {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 32px;
+    }
+
+    #chart-title {
+        font-size: 25px;
+    }
+
+    .bar-chart {
+        width: 100%;
+        height: 500px;
+        margin: auto;
+        padding: 18px;
+    }
+
+    .bar {
+        width: 10%;
+    }
+
+    .chart-titles {
+        font-size: 2px;
+    }
+
+    #appointment-container {
+        margin-top: 10%;
+    }
+
+    .top-lables {
+        width: 49%;
+        height: auto;
+        font-size: 12px;
+    }
+
+    .lable-img {
+        width: 25%;
+    }
+
+    #appointment-title {
+        margin-top: -5%;
+        font-size: 25px;
+    }
+
+    #appointment-data {
+        width: 98%;
+    }
+
+    thead th {
+        font-size: 14px;
+        height: 30px;
+    }
+
+    th,
+    td {
+        height: 25px;
+        font-size: 13px;
     }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
+    .navbar {
+        position: fixed;
+    }
+
     .navbar .nav-links {
-        position: absolute;
-        right: 0;
-        height: 100vh;
-        top: 70px;
-        background-color: #333;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
         display: none;
     }
 
@@ -62,11 +225,206 @@
     .hamburger {
         display: flex;
     }
+
+    #dashboard-controller {
+        display: none;
+    }
+
+    #dashboard-container {
+        padding-left: 5px;
+        padding-right: 5px;
+        display: flex;
+    }
+
+    #bar-chart-container {
+        margin-top: 8%;
+    }
+
+    #datetime-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #time-lbl {
+        font-size: 30px;
+    }
+
+    #date-lbl {
+        font-size: 15px;
+        font-style: italic;
+    }
+
+    #welcome-admin {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 28px;
+    }
+
+    #chart-title {
+        font-size: 20px;
+    }
+
+    .bar-chart {
+        width: 100%;
+        height: 500px;
+        margin: auto;
+        padding: 18px;
+    }
+
+    .bar {
+        width: 10%;
+    }
+
+    .chart-titles {
+        font-size: 3px;
+    }
+
+    #appointment-container {
+        margin-top: 13.5%;
+    }
+
+    .top-lables {
+        width: 49%;
+        height: auto;
+        font-size: 15px;
+    }
+
+    .lable-img {
+        width: 25%;
+    }
+
+    #appointment-title {
+        margin-top: -5%;
+        font-size: 18px;
+    }
+
+    #appointment-data {
+        width: 98%;
+    }
+
+    thead th {
+        font-size: 16px;
+        height: 55px;
+    }
+
+    th,
+    td {
+        height: 42.5px;
+        font-size: 15px;
+    }
 }
 
-@media screen and (min-width:768px) and (max-width:991px) {}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .navbar {
+        position: fixed;
+    }
+
+    .navbar #logo {
+        font-size: 20px;
+    }
+
+    #logo:hover {
+        font-size: 22px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 16px;
+    }
+
+    .navbar .nav-links a:hover {
+        font-size: 20px;
+    }
+
+    #dashboard-controller {
+        display: none;
+    }
+
+    #dashboard-container {
+        padding-left: 5px;
+        padding-right: 5px;
+        display: flex;
+    }
+
+    #bar-chart-container {
+        margin-top: 1%;
+    }
+
+    #datetime-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #time-lbl {
+        font-size: 50px;
+    }
+
+    #date-lbl {
+        font-size: 20px;
+        font-style: italic;
+    }
+
+    #welcome-admin {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .bar-chart {
+        width: 100%;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .bar {
+        width: 10%;
+    }
+
+    .chart-titles {
+        font-size: 8px;
+    }
+
+    #appointment-container {
+        margin-top: 6%;
+    }
+
+    .top-lables {
+        width: 49%;
+        height: auto;
+        font-size: 18px;
+    }
+
+    .lable-img {
+        width: 25%;
+    }
+
+    #appointment-title {
+        padding-top: 2%;
+    }
+
+    #appointment-data {
+        width: 98%;
+    }
+
+    thead th {
+        font-size: 18px;
+        height: 55px;
+    }
+
+    th,
+    td {
+        height: 44.5px;
+        font-size: 18px;
+    }
+}
 
 @media screen and (min-width:992px) and (max-width:1199px) {
+    .navbar {
+        position: fixed;
+    }
+
     #dashboard-controller {
         width: 30%;
         height: auto;
@@ -169,6 +527,10 @@
 }
 
 @media screen and (min-width:1200px) {
+    .navbar {
+        position: fixed;
+    }
+
     .navbar #logo {
         font-size: 24px;
     }
