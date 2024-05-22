@@ -66,19 +66,141 @@
 
 @media screen and (min-width:768px) and (max-width:991px) {}
 
-@media screen and (min-width:992px) and (max-width:1199px) {}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    #dashboard-controller {
+        width: 30%;
+        height: auto;
+        gap: 15px;
+    }
 
-@media screen and (min-width:1200px) {
     #dashboard-controller img {
-        padding-top: 20%;
-        width: 75%;
+        padding-top: 25%;
+        width: 100%;
         padding-left: 10%;
     }
 
     .icon-button {
-        width: 85%;
-        height: 150px;
-        padding: 10px 20px;
+        width: 200px;
+        height: 45px;
+        padding: 10px 10px;
+        font-size: 18px;
+    }
+
+    .icon-button i {
+        margin-right: 30%;
+    }
+
+    #dashboard-container {
+        display: flex;
+    }
+
+    #bar-chart-container {
+        margin-top: 1%;
+    }
+
+    #datetime-container {
+        width: 100%;
+        height: auto;
+    }
+
+    #time-lbl {
+        font-size: 50px;
+    }
+
+    #date-lbl {
+        font-size: 20px;
+        font-style: italic;
+    }
+
+    #welcome-admin {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .bar-chart {
+        width: 100%;
+        height: 500px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .bar {
+        width: 10%;
+    }
+
+    .chart-titles {
+        font-size: 8px;
+    }
+
+    #appointment-container {
+        margin-top: 4.5%;
+    }
+
+    .top-lables {
+        width: 49%;
+        height: auto;
+        font-size: 18px;
+    }
+
+    .lable-img {
+        width: 25%;
+    }
+
+    #appointment-title {
+        padding-top: 2%;
+    }
+
+    #appointment-data {
+        width: 98%;
+    }
+
+    thead th {
+        font-size: 18px;
+        height: 55px;
+    }
+
+    th,
+    td {
+        height: 44.5px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .navbar #logo {
+        font-size: 24px;
+    }
+
+    #logo:hover {
+        font-size: 25px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+    }
+
+    .navbar .nav-links a:hover {
+        font-size: 22px;
+    }
+
+    #dashboard-controller {
+        width: 30%;
+        height: auto;
+        gap: 1.5%;
+    }
+
+    #dashboard-controller img {
+        padding-top: 20%;
+        width: 90%;
+        padding-left: 20%;
+    }
+
+    .icon-button {
+        width: 240px;
+        height: 50px;
+        padding: 10px 10px;
         font-size: 20px;
     }
 
@@ -91,8 +213,8 @@
     }
 
     #datetime-container {
-        width: 600px;
-        height: 90px;
+        width: 100%;
+        height: auto;
     }
 
     #time-lbl {
@@ -105,16 +227,50 @@
     }
 
     #welcome-admin {
-        width: 600px;
-        height: 50px;
+        width: 100%;
+        height: auto;
         text-align: center;
-            font-size: 50px;
+        font-size: 45px;
     }
 
     .bar-chart {
-        width: 600px;
+        width: auto;
         height: 445px;
         margin: auto;
         padding: 20px;
+    }
+
+    .bar {
+        width: 10%;
+    }
+
+    .chart-titles {
+        font-size: 12px;
+    }
+
+    #appointment-container {
+        margin-top: 4.5%;
+    }
+
+    .top-lables {
+        width: 49%;
+        font-size: 22px;
+    }
+
+    .lable-img {
+        width: 25%;
+    }
+
+    #appointment-title {
+        padding-top: 2%;
+    }
+
+    #appointment-data {
+        width: 98%;
+    }
+
+    th,
+    td {
+        height: 40px;
     }
 }

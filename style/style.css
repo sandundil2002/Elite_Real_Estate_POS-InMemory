@@ -35,14 +35,12 @@ html {
 }
 
 .navbar #logo {
-    font-size: 24px;
     color: #fff;
 }
 
 #logo:hover {
     color: burlywood;
     cursor: default;
-    font-size: 25px;
 }
 
 .navbar .nav-links {
@@ -57,12 +55,10 @@ html {
 .navbar .nav-links a {
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
 }
 
 .navbar .nav-links a:hover {
     color: burlywood;
-    font-size: 22px;
 }
 
 .nav-links.active {
@@ -84,13 +80,13 @@ html {
 
 #dashboard-controller {
     padding-left: 2%;
+    padding-right: 2%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
     border: 1px solid black;
-    width: 20%;
-    height: 710px;
     background-color: #ddabab;
+    width: 100%;
+    height: auto;
 }
 
 .icon-button {
@@ -109,6 +105,11 @@ html {
     border: none;
 }
 
+#bar-chart-container{
+    width: 100%;
+    height: 100%;
+}
+
 #datetime-container {
     margin-top: 8.4%;
     text-align: center;
@@ -125,6 +126,7 @@ html {
 #chart-title {
     text-align: center;
     font-weight: 500;
+    margin-top: 3.8%;
 }
 
 .bar-chart {
@@ -138,7 +140,6 @@ html {
 }
 
 .bar {
-    width: 10%;
     background-color: #e08a8a;
     position: relative;
     display: flex;
@@ -156,67 +157,58 @@ html {
 
 .chart-titles {
     color: black;
-    font-size: 12px;
     font-style: italic;
 }
 
-#appointment-container{
-    margin-top: 3.5%;
+#appointment-container {
+    width: 100%;
+    height: 100%;
 }
 
-#appointment-lbl{
+#appointment-lbl {
     display: flex;
-        gap: 1%;
+    gap: 1%;
 }
 
-.top-lables{
-    width: 306px;
-    height: 120px;
+.top-lables {
     border: 1px solid black;
     background-color: #ccc;
-    font-size: 28px;
     text-align: center;
     font-weight: bold;
     font-style: italic;
 }
 
-.lable-img{
-    width: 25%;
-}
-
-#property-title{
+#appointment-title {
     text-align: center;
     font-weight: 500;
 }
 
-#appointment-data{
-    margin-top: 3%;
-    margin-left: 2%;
-    width: 600px;
+#appointment-data {
+    margin-left: 1%;
     border: 1px solid black;
     border-radius: 5px;
     background-color: transparent;
     border-collapse: collapse;
 }
 
-th, td{
+th,
+td {
     text-align: center;
-    height: 40px;
     border: 1px solid black;
 }
 
-thead th{
+thead th {
     background-color: #ccc;
     color: black;
     width: 25%;
     font-style: italic;
-    
+
 }
 
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
     background-color: #e3ecf5;
 }
 
-tbody tr:nth-child(even){
+tbody tr:nth-child(even) {
     background-color: #cdd6df;
 }

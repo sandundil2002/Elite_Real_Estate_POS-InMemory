@@ -14,185 +14,182 @@
 </head>
 
 <body>
+    <section id="dashboard-section">
+        <nav class="navbar">
+            <div id="logo">ELITE REAL ESTATE</div>
 
-    <nav class="navbar">
-        <div id="logo">ELITE REAL ESTATE</div>
+            <ul class="nav-links">
+                <li><a class="nav-keys" href="#">Home</a></li>
+                <li><a class="nav-keys" href="#">Appointment</a></li>
+                <li><a class="nav-keys" href="#">Property</a></li>
+                <li><a class="nav-keys" href="#">Customers</a></li>
+                <li><a class="nav-keys" href="#">Contact</a></li>
+            </ul>
 
-        <ul class="nav-links">
-            <li><a class="nav-keys" href="#">Home</a></li>
-            <li><a class="nav-keys" href="#">Appointment</a></li>
-            <li><a class="nav-keys" href="#">Property</a></li>
-            <li><a class="nav-keys" href="#">Customers</a></li>
-            <li><a class="nav-keys" href="#">Contact</a></li>
-        </ul>
+            <div class="hamburger">
+                <span>Home</span>
+                <span>Appointment</span>
+                <span>Property</span>
+                <span>Customers</span>
+                <span>Contact</span>
+            </div>
+        </nav>
 
-        <div class="hamburger">
-            <span>Home</span>
-            <span>Appointment</span>
-            <span>Property</span>
-            <span>Customers</span>
-            <span>Contact</span>
-        </div>
-    </nav>
+        <div id="dashboard-container">
+            <div id="dashboard-controller">
+                <img src="/assets/logo-removebg-preview.jpg" alt="">
 
-    <div id="dashboard-container">
-        <div id="dashboard-controller">
-            <img src="/assets/logo-removebg-preview.jpg" alt="">
+                <button class="icon-button"> <i class="fa-solid fa-house"></i> Dashboard </button>
+                <button class="icon-button"> <i class="fa-solid fa-calendar-check"></i> Appointment </button>
+                <button class="icon-button"> <i class="fa-solid fa-user-tie"></i> Customers </button>
+                <button class="icon-button"> <i class="fa-solid fa-landmark"></i> Property</button>
+                <button class="icon-button"> <i class="fa-solid fa-users"></i> Employee </button>
+                <button class="icon-button"> <i class="fa-solid fa-money-check-dollar"></i> Payment </button>
+                <button class="icon-button"> <i class="fa-solid fa-tent"></i> Rental </button>
+                <button class="icon-button"> <i class="fa-solid fa-user-group"></i></i> Agents </button>
+                <button class="icon-button"> <i class="fa-solid fa-power-off"></i> Log Out </button>
+            </div>
 
-            <button class="icon-button"> <i class="fa-solid fa-house"></i> Dashboard </button>
-            <button class="icon-button"> <i class="fa-solid fa-calendar-check"></i> Appointment </button>
-            <button class="icon-button"> <i class="fa-solid fa-user-tie"></i> Customers </button>
-            <button class="icon-button"> <i class="fa-solid fa-landmark"></i> Property</button>
-            <button class="icon-button"> <i class="fa-solid fa-users"></i> Employee </button>
-            <button class="icon-button"> <i class="fa-solid fa-money-check-dollar"></i> Payment </button>
-            <button class="icon-button"> <i class="fa-solid fa-tent"></i> Rental </button>
-            <button class="icon-button"> <i class="fa-solid fa-user-group"></i></i> Agents </button>
-            <button class="icon-button"> <i class="fa-solid fa-power-off"></i> Log Out </button>
-        </div>
+            <div id="bar-chart-container">
+                <div id="datetime-container">
+                    <span id="time-lbl"></span><br>
+                    <span id="date-lbl">Date</span>
+                </div>
+                <div id="welcome-admin">Welcome Back Admin</div>
+                <h3 id="chart-title">Property Types</h3>
 
-        <div id="bar-chart-container">
-            <div id="datetime-container">
-                <span id="time-lbl"></span><br>
-                <span id="date-lbl">Date</span>
-            </div><br>
-            <div id="welcome-admin">Welcome Back Admin</div><br>
-            <h3 id="chart-title">Property Types</h3>
+                <div class="bar-chart">
+                    <div class="bar" style="height: 30%;" data-value="30%">
+                        <span class="bar-label">30%</span>
+                        <h5 class="chart-titles">Lands</h5>
+                    </div>
+                    <div class="bar" style="height: 50%;" data-value="50%">
+                        <span class="bar-label">50%</span>
+                        <h5 class="chart-titles">Buildings</h5>
+                    </div>
+                    <div class="bar" style="height: 60%;" data-value="60%">
+                        <span class="bar-label">60%</span>
+                        <h5 class="chart-titles">House</h5>
+                    </div>
+                    <div class="bar" style="height: 20%;" data-value="20%">
+                        <span class="bar-label">20%</span>
+                        <h5 class="chart-titles">Apartment</h5>
+                    </div>
+                    <div class="bar" style="height: 70%;" data-value="70%">
+                        <span class="bar-label">70%</span>
+                        <h5 class="chart-titles">Office</h5>
+                    </div>
+                    <div class="bar" style="height: 90%;" data-value="90%">
+                        <span class="bar-label">90%</span>
+                        <h5 class="chart-titles">Shop</h5>
+                    </div>
+                    <div class="bar" style="height: 40%;" data-value="40%">
+                        <span class="bar-label">40%</span>
+                        <h5 class="chart-titles">Farms</h5>
+                    </div>
+                    <div class="bar" style="height: 10%;" data-value="10%">
+                        <span class="bar-label">10%</span>
+                        <h5 class="chart-titles">Cabin</h5>
+                    </div>
+                </div>
+            </div>
 
-            <div class="bar-chart">
-                <div class="bar" style="height: 30%;" data-value="30%">
-                    <span class="bar-label">30%</span>
-                    <h5 class="chart-titles">Lands</h5>
-                </div>
-                <div class="bar" style="height: 50%;" data-value="50%">
-                    <span class="bar-label">50%</span>
-                    <h5 class="chart-titles">Buildings</h5>
-                </div>
-                <div class="bar" style="height: 60%;" data-value="60%">
-                    <span class="bar-label">60%</span>
-                    <h5 class="chart-titles">House</h5>
-                </div>
-                <div class="bar" style="height: 20%;" data-value="20%">
-                    <span class="bar-label">20%</span>
-                    <h5 class="chart-titles">Apartment</h5>
-                </div>
-                <div class="bar" style="height: 70%;" data-value="70%">
-                    <span class="bar-label">70%</span>
-                    <h5 class="chart-titles">Office</h5>
-                </div>
-                <div class="bar" style="height: 90%;" data-value="90%">
-                    <span class="bar-label">90%</span>
-                    <h5 class="chart-titles">Shop</h5>
-                </div>
-                <div class="bar" style="height: 40%;" data-value="40%">
-                    <span class="bar-label">40%</span>
-                    <h5 class="chart-titles">Farms</h5>
-                </div>
-                <div class="bar" style="height: 10%;" data-value="10%">
-                    <span class="bar-label">10%</span>
-                    <h5 class="chart-titles">Cabin</h5>
+            <div id="appointment-container">
+                <div id="appointment-lbl">
+                    <div class="top-lables"><img class="lable-img" src="/assets/appointment-icon.png" alt=""><br><span
+                            id="appointment-count">Total Appointments 10</span></div>
+                    <div class="top-lables"><img class="lable-img" src="/assets/property-icon.png" alt=""><br><span
+                            id="property-count">Total Properties 10</span></div>
+                </div> <br><br>
+
+                <div id="appointment-table">
+                    <h3 id="appointment-title">Today Appointments</h3>
+                    <table id="appointment-data">
+                        <thead>
+                            <tr>
+                                <th>Appo. ID</th>
+                                <th>Customer</th>
+                                <th>Time</th>
+                                <th>Mobile</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>A001</td>
+                                <td>Sandun</td>
+                                <td>10.00A.M.</td>
+                                <td>0762357995</td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-
-        <div id="appointment-container">
-            <div id="appointment-lbl">
-                <div class="top-lables"><img class="lable-img" src="/assets/appointment-icon.png" alt=""><br><span
-                        id="appointment-count">Total Appointments 10</span></div>
-                <div class="top-lables"><img class="lable-img" src="/assets/property-icon.png" alt=""><br><span
-                        id="property-count">Total Properties 10</span></div>
-            </div> <br><br>
-
-            <div id="appointment-table">
-                <h3 id="property-title">Today Appointments</h3>
-                <table id="appointment-data">
-                    <thead>
-                        <tr>
-                            <th>Appointment ID</th>
-                            <th>Customer</th>
-                            <th>Time</th>
-                            <th>Mobile</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>A001</td>
-                            <td>Sandun</td>
-                            <td>10.00A.M.</td>
-                            <td>0762357995</td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-
-    </div>
-
+    </section>
 
 
     <script src="/js/script.js"></script>
