@@ -71,10 +71,11 @@ html {
 }
 
 .hamburger span {
-    height: 3px;
+    height: 4px;
     width: 25px;
     background: #fff;
-    margin: 4px;
+    margin: 2.5px 0px;
+    border-radius: 10px;
 }
 
 #dashboard-controller {

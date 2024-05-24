@@ -24,6 +24,7 @@
 
     #logo {
         font-size: 15px;
+        padding-left: 10%;
     }
 
     .hamburger {
@@ -112,6 +113,93 @@
         height: 20px;
         font-size: 12px;
     }
+
+    .sidebar {
+        position: fixed;
+        top: 1px;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #ddabab;
+        transition: all 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar header {
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        line-height: 44px;
+        background: #333;
+        user-select: none;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar ul li {
+        line-height: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #1a252f;
+    }
+
+    .sidebar ul li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding-left: 20px;
+        transition: 0.4s;
+        font-size: 18px;
+    }
+
+    .sidebar ul li a:hover {
+        padding-left: 30px;
+        background: #1a252f;
+        color: white;
+    }
+
+    label[for="check"] {
+        position: fixed;
+        left: 5px;
+        top: 3px;
+        font-size: 24px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1100;
+        border-radius: 3px;
+    }
+
+    label[for="check"] i {
+        pointer-events: none;
+    }
+
+    #cancel {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    #check:checked~.sidebar {
+        left: 0;
+    }
+
+    #check:checked~label[for="check"] #btn {
+        display: none;
+    }
+
+    #check:checked~label[for="check"] #cancel {
+        display: block;
+    }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
@@ -132,6 +220,7 @@
 
     .nav-links.active {
         display: flex;
+        margin-top: -3%;
     }
 
     .nav-links li {
@@ -140,6 +229,7 @@
 
     #logo {
         font-size: 15px;
+        padding-left: 5%;
     }
 
     .hamburger {
@@ -228,6 +318,93 @@
         height: 25px;
         font-size: 13px;
     }
+
+    .sidebar {
+        position: fixed;
+        top: 1px;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #ddabab;
+        transition: all 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar header {
+        font-size: 18px;
+        color: white;
+        text-align: center;
+        line-height: 44px;
+        background: #333;
+        user-select: none;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar ul li {
+        line-height: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #1a252f;
+    }
+
+    .sidebar ul li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding-left: 20px;
+        transition: 0.4s;
+        font-size: 20px;
+    }
+
+    .sidebar ul li a:hover {
+        padding-left: 30px;
+        background: #1a252f;
+        color: white;
+    }
+
+    label[for="check"] {
+        position: fixed;
+        left: 5px;
+        top: 3px;
+        font-size: 24px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1100;
+        border-radius: 3px;
+    }
+
+    label[for="check"] i {
+        pointer-events: none;
+    }
+
+    #cancel {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    #check:checked~.sidebar {
+        left: 0;
+    }
+
+    #check:checked~label[for="check"] #btn {
+        display: none;
+    }
+
+    #check:checked~label[for="check"] #cancel {
+        display: block;
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -246,8 +423,13 @@
         background-color: #333;
     }
 
+    #logo {
+        padding-left: 5%;
+    }
+
     .nav-links.active {
         display: flex;
+        margin-top: -2.2%;
     }
 
     .nav-links li {
@@ -345,6 +527,92 @@
         height: 42.5px;
         font-size: 15px;
     }
+
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #ddabab;
+        transition: all 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar header {
+        font-size: 22px;
+        color: white;
+        text-align: center;
+        line-height: 44px;
+        background: #333;
+        user-select: none;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar ul li {
+        line-height: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #1a252f;
+    }
+
+    .sidebar ul li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding-left: 20px;
+        transition: 0.4s;
+    }
+
+    .sidebar ul li a:hover {
+        padding-left: 30px;
+        background: #1a252f;
+        color: white;
+    }
+
+    label[for="check"] {
+        position: fixed;
+        left: 5px;
+        top: 3px;
+        font-size: 24px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1100;
+        border-radius: 3px;
+    }
+
+    label[for="check"] i {
+        pointer-events: none;
+    }
+
+    #cancel {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    #check:checked~.sidebar {
+        left: 0;
+    }
+
+    #check:checked~label[for="check"] #btn {
+        display: none;
+    }
+
+    #check:checked~label[for="check"] #cancel {
+        display: block;
+    }
+
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -354,6 +622,7 @@
 
     .navbar #logo {
         font-size: 20px;
+        padding-left: 30px;
     }
 
     #logo:hover {
@@ -450,6 +719,91 @@
         height: 44.5px;
         font-size: 18px;
     }
+
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #ddabab;
+        transition: all 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar header {
+        font-size: 22px;
+        color: white;
+        text-align: center;
+        line-height: 44px;
+        background: #333;
+        user-select: none;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar ul li {
+        line-height: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #1a252f;
+    }
+
+    .sidebar ul li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding-left: 20px;
+        transition: 0.4s;
+    }
+
+    .sidebar ul li a:hover {
+        padding-left: 30px;
+        background: #1a252f;
+        color: white;
+    }
+
+    label[for="check"] {
+        position: fixed;
+        left: 5px;
+        top: 3px;
+        font-size: 24px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1100;
+        border-radius: 3px;
+    }
+
+    label[for="check"] i {
+        pointer-events: none;
+    }
+
+    #cancel {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    #check:checked~.sidebar {
+        left: 0;
+    }
+
+    #check:checked~label[for="check"] #btn {
+        display: none;
+    }
+
+    #check:checked~label[for="check"] #cancel {
+        display: block;
+    }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
@@ -482,6 +836,7 @@
 
     #dashboard-container {
         display: flex;
+        margin-left: -1.75%;
     }
 
     #bar-chart-container {
@@ -556,6 +911,14 @@
         height: 44.5px;
         font-size: 18px;
     }
+
+    .sidebar {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
 }
 
 @media screen and (min-width:1200px) {
@@ -604,6 +967,7 @@
 
     #dashboard-container {
         display: flex;
+        margin-left: -1.25%;
     }
 
     #datetime-container {
@@ -666,5 +1030,13 @@
     th,
     td {
         height: 40px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    #check {
+        display: none;
     }
 }
