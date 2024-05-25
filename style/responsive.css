@@ -200,6 +200,18 @@
     #check:checked~label[for="check"] #cancel {
         display: block;
     }
+
+    /*-----------------------------Appointment Section-----------------------------*/
+
+    #appointment-controller h1 {
+        margin-left: 10%;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    #dashboard-appointment {
+        display: none;
+    }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
@@ -404,6 +416,18 @@
 
     #check:checked~label[for="check"] #cancel {
         display: block;
+    }
+
+    /*-----------------------------Appointment Section-----------------------------*/
+
+    #appointment-controller h1 {
+        margin-left: 15%;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    #dashboard-appointment {
+        display: none;
     }
 }
 
@@ -613,6 +637,19 @@
         display: block;
     }
 
+    /*-----------------------------Appointment Section-----------------------------*/
+
+    #appointment-controller h1 {
+        margin-top: 7%;
+        margin-left: 28%;
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    #dashboard-appointment {
+        display: none;
+    }
+
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -804,11 +841,32 @@
     #check:checked~label[for="check"] #cancel {
         display: block;
     }
+
+    /*-----------------------------Appointment Section-----------------------------*/
+
+    #appointment-controller h1 {
+        margin-top: 5%;
+        margin-left: 30%;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    #dashboard-appointment {
+        display: none;
+    }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
     .navbar {
         position: fixed;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+    }
+
+    .navbar .nav-links a:hover {
+        font-size: 20px;
     }
 
     #dashboard-controller {
@@ -918,6 +976,30 @@
 
     #check {
         display: none;
+    }
+
+    /*-----------------------------Appointment Section-----------------------------*/
+
+    #appointment-controller h1 {
+        margin-top: 3.4%;
+        margin-left: 16%;
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    #dashboard-appointment {
+        width: 250px;
+        height: 670px;
+        gap: 2%;
+        margin-top: 12%;
+        margin-left: -8%;
+        padding-left: 8%;
+        padding-right: 3%;
+    }
+
+    #dashboard-appointment img {
+        width: 90%;
+        padding-left: 13%;
     }
 }
 
@@ -1038,5 +1120,29 @@
 
     #check {
         display: none;
+    }
+
+    /*-----------------------------Appointment Section-----------------------------*/
+
+    #appointment-controller h1 {
+        margin-top: 3.2%;
+        margin-left: 20%;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    #dashboard-appointment {
+        width: 300px;
+        height: 663px;
+        gap: 1.5%;
+        margin-top: 14%;
+        margin-left: -8%;
+        padding-left: 8%;
+        padding-right: 3%;
+    }
+
+    #dashboard-appointment img {
+        width: 80%;
+        padding-left: 20%;
     }
 }
