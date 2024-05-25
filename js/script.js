@@ -54,3 +54,11 @@ function getDate() {
 getDate();
 getTime();
 setInterval(getTime, 1000);
+
+function loadSection(sectionId) {
+  document.querySelectorAll(".section").forEach((section) => {
+    section.classList.remove("active");
+  });
+  
+  document.getElementById(sectionId).classList.add("active");
+}

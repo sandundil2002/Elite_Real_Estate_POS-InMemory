@@ -56,18 +56,20 @@
             <div id="dashboard-controller">
                 <img src="/assets/logo-removebg-preview.jpg" alt="">
 
-                <a class="icon-button" href=""> <i class="fa-solid fa-house"></i> Dashboard </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-calendar-check"></i> Appointment </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-landmark"></i> Property</a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-users"></i> Employee </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-money-check-dollar"></i> Payment </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-tent"></i> Rental </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-user-group"></i></i> Agents </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-power-off"></i> Log Out </a>
+                <button onclick="loadSection('')" class="icon-button" href=""> <i class="fa-solid fa-house"></i>
+                    Dashboard </button>
+                <button onclick="loadSection('appointment-section')" class="icon-button" href=""> <i
+                        class="fa-solid fa-calendar-check"></i> Appointment </button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-landmark"></i> Property</button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-users"></i> Employee </button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-money-check-dollar"></i> Payment </button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-tent"></i> Rental </button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-user-group"></i></i> Agents </button>
+                <button class="icon-button" href=""> <i class="fa-solid fa-power-off"></i> Log Out </button>
             </div>
 
-            <div id="bar-chart-container">
+            <div id="bar-chart-container" class="section active">
                 <div id="datetime-container">
                     <span id="time-lbl"></span><br>
                     <span id="date-lbl">Date</span>
@@ -111,7 +113,7 @@
                 </div>
             </div>
 
-            <div id="appointment-container">
+            <div id="appointment-container" class="section active">
                 <div id="appointment-lbl">
                     <div class="top-lables"><img class="lable-img" src="/assets/appointment-icon.png" alt=""><br><span
                             id="appointment-count">Total Appointments 10</span></div>
@@ -140,10 +142,10 @@
                             </tr>
 
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>A002</td>
+                                <td>Bashini</td>
+                                <td>01.00P.M.</td>
+                                <td>0778343450</td>
                             </tr>
 
                             <tr>
@@ -208,47 +210,29 @@
         </div>
     </section>
 
+    <div id="break-line">Page 1</div>
+
     <section id="appointment-section">
-        <div id="appointment-controller">
-        <div id="dashboard-container">
-            <input type="checkbox" id="check">
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
-            <div class="sidebar">
-                <header>Elite Real Estate</header>
-                <ul>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-house"></i> Dashboard </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-calendar-check"></i> Appointment </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-landmark"></i> Property</a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-users"></i> Employee </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-money-check-dollar"></i> Payment </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-tent"></i> Rental </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-user-group"></i></i> Agents </a></li>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-power-off"></i> Log Out </a></li>
-                </ul>
-            </div>
+        <div id="dashboard-appointment">
+            <img class="app-dash-img" src="/assets/logo-removebg-preview.jpg" alt="">
 
-            <div id="dashboard-appointment">
-                <img src="/assets/logo-removebg-preview.jpg" alt="">
-
-                <a class="icon-button" href=""> <i class="fa-solid fa-house"></i> Dashboard </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-calendar-check"></i> Appointment </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-landmark"></i> Property</a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-users"></i> Employee </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-money-check-dollar"></i> Payment </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-tent"></i> Rental </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-user-group"></i></i> Agents </a>
-                <a class="icon-button" href=""> <i class="fa-solid fa-power-off"></i> Log Out </a>
-            </div>
+            <button class="icon-button" href=""> <i class="fa-solid fa-house"></i> Dashboard </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-calendar-check"></i> Appointment </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-landmark"></i> Property</button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-users"></i> Employee </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-money-check-dollar"></i> Payment </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-tent"></i> Rental </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-user-group"></i></i> Agents </button>
+            <button class="icon-button" href=""> <i class="fa-solid fa-power-off"></i> Log Out </button>
         </div>
 
-        <h1>APPOINTMENT OF ELITE</h1>
+        <div id="appointment-topbar">
+            <h1>APPOINTMENT OF ELITE</h1>
+            <input type="text" id="app-id" placeholder="Appointment ID">
         </div>
     </section>
+    </div>
 
 
     <script src="/js/script.js"></script>
