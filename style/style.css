@@ -221,6 +221,7 @@ tbody tr:nth-child(even) {
     background-color: #333;
     color: white;
     text-align: center;
+    font-size: 15px
 }
 
 /*-----------------------------Appointment Section-----------------------------*/
@@ -229,14 +230,16 @@ tbody tr:nth-child(even) {
 
 
 #appointment-section {
-    display: flex;
     width: 100%;
-    height: 100%;
+    height: auto;
     text-align: center;
 }
 
+#appointment-frame{
+    display: flex;
+}
+
 #dashboard-appointment {
-    width: 30%;
     padding-left: 2%;
     padding-right: 2%;
     display: flex;
@@ -252,7 +255,6 @@ tbody tr:nth-child(even) {
 
 #appointment-topbar {
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: space-evenly;
 }
@@ -268,10 +270,19 @@ tbody tr:nth-child(even) {
     background-color: #cdd6df;
 }
 
-.section {
-    display: none;
+#input-fields{
+    padding-left: 2%;
+    padding-right: 2%;
+    gap: 3%;
 }
 
-.section.active {
-    display: block;
+.combo-box{
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #e3ecf5;
+}
+
+.combo-box:hover{
+    background-color: #cdd6df;
 }
