@@ -204,7 +204,7 @@
     /*-----------------------------Appointment Section-----------------------------*/
 
     #appointment-section h1 {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
     }
 
@@ -243,6 +243,13 @@
         height: 15px;
         font-size: 5px;
         background-size: 8px;
+    }
+
+    /*-----------------------------Customer Section-----------------------------*/
+
+    #customer-section h1 {
+        font-size: 14px;
+        font-weight: 500;
     }
 }
 
@@ -491,6 +498,13 @@
         height: 20px;
         font-size: 10px;
         background-size: 10px;
+    }
+
+    /*-----------------------------Customer Section-----------------------------*/
+
+    #customer-section h1 {
+        font-size: 20px;
+        font-weight: 500;
     }
 }
 
@@ -742,6 +756,13 @@
         font-size: 12px;
         background-size: 15px;
     }
+
+    /*-----------------------------Customer Section-----------------------------*/
+
+    #customer-section h1 {
+        font-size: 25px;
+        font-weight: 500;
+    }
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -978,6 +999,13 @@
         appearance: none;
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
     }
+
+    /*-----------------------------Customer Section-----------------------------*/
+
+    #customer-section h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
@@ -1107,7 +1135,6 @@
     #appointment-section h1 {
         font-size: 35px;
         font-weight: 500;
-        margin-top: -.5%;
     }
 
     #dashboard-appointment {
@@ -1153,6 +1180,13 @@
         background-size: 20px;
         appearance: none;
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
+    }
+
+    /*-----------------------------Customer Section-----------------------------*/
+
+    #customer-section h1 {
+        font-size: 35px;
+        font-weight: 500;
     }
 }
 
@@ -1280,7 +1314,6 @@
     #appointment-section h1 {
         font-size: 40px;
         font-weight: 500;
-        margin-top: -.5%;
     }
 
     #dashboard-appointment {
@@ -1326,5 +1359,16 @@
         background-size: 25px;
         appearance: none;
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
+    }
+
+    /*-----------------------------Customer Section-----------------------------*/
+
+    #customer-section {
+        text-align: center;
+    }
+
+    #customer-section h1 {
+        font-size: 40px;
+        font-weight: 500;
     }
 }

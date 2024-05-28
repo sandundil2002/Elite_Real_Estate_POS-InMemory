@@ -353,3 +353,14 @@ tbody tr:nth-child(even) {
 .status-combo:hover {
     background-color: #218838;
 }
+
+/*-----------------------------------Customer-secti--------------------------------------------*/
+
+#customer-topbar{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#customer-section h1 {
+    font-family: "Poppins", sans-serif;
+}
