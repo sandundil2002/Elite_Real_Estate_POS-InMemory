@@ -305,7 +305,7 @@ tbody tr:nth-child(even) {
     font-style: italic;
 }
 
-#appo-btn-container {
+#crud-btn-container {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -354,7 +354,7 @@ tbody tr:nth-child(even) {
     background-color: #218838;
 }
 
-/*-----------------------------------Customer-secti--------------------------------------------*/
+/*---------------------------------Customer section------------------------------------------*/
 
 #customer-topbar{
     display: flex;
