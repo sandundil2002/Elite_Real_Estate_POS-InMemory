@@ -296,9 +296,35 @@ tbody tr:nth-child(even) {
     border-collapse: collapse;
 }
 
+#appointment-thead tr {
+    background-color: #ddabab;
+}
+
 #appointment-thead th {
-    background-color: #ccc;
     color: black;
     width: 16.67%;
     font-style: italic;
+}
+
+#appo-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.crud-btn {
+    border: 1px solid;
+    border-radius: 7px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.crud-btn:hover {
+    background-color: #0069d9;
+}
+
+.crud-btn:active {
+    transform: scale(0.95);
 }
