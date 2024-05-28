@@ -354,11 +354,38 @@ tbody tr:nth-child(even) {
     background-color: #218838;
 }
 
-/*---------------------------------Customer section------------------------------------------*/
-
-#section-topbar{
+#section-topbar {
     display: flex;
     justify-content: space-evenly;
 }
 
-/*---------------------------------Property section------------------------------------------*/
+/*---------------------------------Payment section------------------------------------------*/
+
+#payment-section{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.payment-fields-container{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    padding-left: 3%;
+    padding-right: 3%;
+    row-gap: 20%;
+    column-gap: 5%;
+}
+
+.payment-fields-container input{
+    width: 100%;
+}
+
+.payment-fields-container select{
+    width: 100%;
+}
+
+#payment-method{
+    margin-left: 50%;
+}
