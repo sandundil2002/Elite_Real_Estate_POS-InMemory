@@ -195,7 +195,7 @@ td {
     border: 1px solid black;
 }
 
-thead th {
+#appointment-data thead th {
     background-color: #ccc;
     color: black;
     width: 25%;
@@ -235,7 +235,7 @@ tbody tr:nth-child(even) {
     text-align: center;
 }
 
-#appointment-frame{
+#appointment-frame {
     display: flex;
 }
 
@@ -270,19 +270,35 @@ tbody tr:nth-child(even) {
     background-color: #cdd6df;
 }
 
-#input-fields{
+#input-fields {
     padding-left: 2%;
     padding-right: 2%;
     gap: 3%;
 }
 
-.combo-box{
+.combo-box {
     border: 1px solid black;
     border-radius: 10px;
     text-align: center;
     background-color: #e3ecf5;
 }
 
-.combo-box:hover{
+.combo-box:hover {
     background-color: #cdd6df;
+}
+
+#appointment-manage {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 1px solid black;
+    border-radius: 5px;
+    border-collapse: collapse;
+}
+
+#appointment-thead th {
+    background-color: #ccc;
+    color: black;
+    width: 16.67%;
+    font-style: italic;
 }
