@@ -237,6 +237,13 @@
         height: 20px;
         font-size: 10px;
     }
+
+    .status-combo {
+        width: 90%;
+        height: 15px;
+        font-size: 5px;
+        background-size: 8px;
+    }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
@@ -477,6 +484,13 @@
         width: 15%;
         height: 25px;
         font-size: 14px;
+    }
+
+    .status-combo {
+        width: 80%;
+        height: 20px;
+        font-size: 10px;
+        background-size: 10px;
     }
 }
 
@@ -721,6 +735,13 @@
         height: 30px;
         font-size: 16px;
     }
+
+    .status-combo {
+        width: 80%;
+        height: 30px;
+        font-size: 12px;
+        background-size: 15px;
+    }
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -948,6 +969,15 @@
         height: 35px;
         font-size: 18px;
     }
+
+    .status-combo {
+        width: 70%;
+        height: 35px;
+        font-size: 14px;
+        background-size: 18px;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
+    }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
@@ -1115,6 +1145,15 @@
         height: 40px;
         font-size: 20px;
     }
+
+    .status-combo {
+        width: 75%;
+        height: 35px;
+        font-size: 18px;
+        background-size: 20px;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
+    }
 }
 
 @media screen and (min-width:1200px) {
@@ -1273,10 +1312,19 @@
         height: 40px;
         font-size: 22px;
     }
-    
+
     .crud-btn {
         width: 12%;
         height: 50px;
         font-size: 22px;
+    }
+
+    .status-combo {
+        width: 70%;
+        height: 35px;
+        font-size: 20px;
+        background-size: 25px;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
     }
 }

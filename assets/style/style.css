@@ -327,3 +327,29 @@ tbody tr:nth-child(even) {
 .crud-btn:active {
     transform: scale(0.95);
 }
+
+.status-combo {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color :#28a745;;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    text-align: center;
+}
+
+.status-combo .pending {
+    background-color: #ffeb3b;
+}
+
+.status-combo .complete {
+    background-color: #4caf50;
+}
+
+.status-combo .cancel {
+    background-color: #f44336;
+}
+
+.status-combo:hover {
+    background-color: #218838;
+}
