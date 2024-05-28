@@ -248,7 +248,7 @@ tbody tr:nth-child(even) {
     height: auto;
 }
 
-#appointment-section h1 {
+.section-title{
     font-family: "Poppins", sans-serif;
 }
 
@@ -356,11 +356,9 @@ tbody tr:nth-child(even) {
 
 /*---------------------------------Customer section------------------------------------------*/
 
-#customer-topbar{
+#section-topbar{
     display: flex;
     justify-content: space-evenly;
 }
 
-#customer-section h1 {
-    font-family: "Poppins", sans-serif;
-}
+/*---------------------------------Property section------------------------------------------*/

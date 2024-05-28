@@ -203,7 +203,7 @@
 
     /*-----------------------------Appointment Section-----------------------------*/
 
-    #appointment-section h1 {
+    .section-title {
         font-size: 14px;
         font-weight: 500;
     }
@@ -246,11 +246,6 @@
     }
 
     /*-----------------------------Customer Section-----------------------------*/
-
-    #customer-section h1 {
-        font-size: 14px;
-        font-weight: 500;
-    }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
@@ -459,7 +454,7 @@
 
     /*-----------------------------Appointment Section-----------------------------*/
 
-    #appointment-section h1 {
+    .section-title {
         font-size: 20px;
         font-weight: 500;
     }
@@ -501,11 +496,6 @@
     }
 
     /*-----------------------------Customer Section-----------------------------*/
-
-    #customer-section h1 {
-        font-size: 20px;
-        font-weight: 500;
-    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -716,7 +706,7 @@
 
     /*-----------------------------Appointment Section-----------------------------*/
 
-    #appointment-section h1 {
+    .section-title {
         font-size: 25px;
         font-weight: 500;
     }
@@ -758,11 +748,6 @@
     }
 
     /*-----------------------------Customer Section-----------------------------*/
-
-    #customer-section h1 {
-        font-size: 25px;
-        font-weight: 500;
-    }
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -957,7 +942,7 @@
 
     /*-----------------------------Appointment Section-----------------------------*/
 
-    #appointment-section h1 {
+    .section-title {
         font-size: 30px;
         font-weight: 500;
     }
@@ -1001,11 +986,6 @@
     }
 
     /*-----------------------------Customer Section-----------------------------*/
-
-    #customer-section h1 {
-        font-size: 30px;
-        font-weight: 500;
-    }
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
@@ -1132,7 +1112,7 @@
 
     /*-----------------------------Appointment Section-----------------------------*/
 
-    #appointment-section h1 {
+    .section-title {
         font-size: 35px;
         font-weight: 500;
     }
@@ -1183,11 +1163,6 @@
     }
 
     /*-----------------------------Customer Section-----------------------------*/
-
-    #customer-section h1 {
-        font-size: 35px;
-        font-weight: 500;
-    }
 }
 
 @media screen and (min-width:1200px) {
@@ -1311,7 +1286,7 @@
 
     /*-----------------------------Appointment Section-----------------------------*/
 
-    #appointment-section h1 {
+    .section-title {
         font-size: 40px;
         font-weight: 500;
     }
@@ -1365,10 +1340,5 @@
 
     #customer-section {
         text-align: center;
-    }
-
-    #customer-section h1 {
-        font-size: 40px;
-        font-weight: 500;
     }
 }
