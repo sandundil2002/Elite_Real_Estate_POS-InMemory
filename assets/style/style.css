@@ -286,7 +286,7 @@ tbody tr:nth-child(even) {
     background-color: #cdd6df;
 }
 
-#appointment-manage {
+#table-manage {
     width: 98%;
     margin-left: 1%;
     margin-right: 1%;
@@ -295,11 +295,11 @@ tbody tr:nth-child(even) {
     border-collapse: collapse;
 }
 
-#appointment-thead tr {
+#table-thead tr {
     background-color: #ddabab;
 }
 
-#appointment-thead th {
+#table-thead th {
     color: black;
     width: 16.67%;
     font-style: italic;
