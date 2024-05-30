@@ -245,7 +245,33 @@
         background-size: 8px;
     }
 
-    /*-----------------------------Customer Section-----------------------------*/
+    /*-----------------------------Payment Section-----------------------------*/
+
+    #payment-container {
+        width: 100%;
+        display: block;
+    }
+
+    .payment-bill {
+        width: 100%;
+    }
+
+    #company-details {
+        font-size: 8px;
+    }
+
+    #payment-title h1 {
+        font-size: 18px;
+    }
+
+    #bill-to-container {
+        font-size: 5px;
+    }
+
+    .pay-btn {
+        font-size: 13px;
+        height: 25px;
+    }
 }
 
 @media screen and (min-width:351px) and (max-width:575px) {
@@ -495,7 +521,33 @@
         background-size: 10px;
     }
 
-    /*-----------------------------Customer Section-----------------------------*/
+    /*-----------------------------Payment section--------------------------------*/
+
+    #payment-container {
+        width: 100%;
+        display: block;
+    }
+
+    .payment-bill {
+        width: 100%;
+    }
+
+    #company-details {
+        font-size: 12px;
+    }
+
+    #payment-title h1 {
+        font-size: 25px;
+    }
+
+    #bill-to-container {
+        font-size: 15px;
+    }
+
+    .pay-btn {
+        font-size: 16px;
+        height: 30px;
+    }
 }
 
 @media screen and (min-width:576px) and (max-width:767px) {
@@ -747,7 +799,29 @@
         background-size: 15px;
     }
 
-    /*-----------------------------Customer Section-----------------------------*/
+    /*-----------------------------Payment section--------------------------------*/
+
+    #payment-container {
+        width: 100%;
+        display: block;
+    }
+
+    .payment-bill {
+        width: 100%;
+    }
+
+    #company-details {
+        font-size: 18px;
+    }
+
+    #payment-title h1 {
+        font-size: 40px;
+    }
+
+    .pay-btn {
+        font-size: 20px;
+        height: 30px;
+    }
 }
 
 @media screen and (min-width:768px) and (max-width:991px) {
@@ -985,7 +1059,39 @@
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
     }
 
-    /*-----------------------------Customer Section-----------------------------*/
+    /*-----------------------------Payment section--------------------------------*/
+
+    #payment-container {
+        width: 100%;
+        display: flex;
+    }
+
+    .payment-bill {
+        width: 50%;
+    }
+
+    #company-details {
+        font-size: 16px;
+    }
+
+    #payment-section h1 {
+        font-size: 27px;
+    }
+
+    #bill-to-container {
+        font-size: 16px;
+    }
+
+    .price-tbl tr th,
+    td {
+        font-size: 14px;
+    }
+
+    .pay-btn {
+        font-size: 20px;
+        height: 40px;
+    }
+
 }
 
 @media screen and (min-width:992px) and (max-width:1199px) {
@@ -1162,7 +1268,22 @@
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"%3E%3Cpolyline points="6 9 12 15 18 9"/%3E%3C/svg%3E');
     }
 
-    /*-----------------------------Customer Section-----------------------------*/
+    /*-----------------------------Payment section--------------------------------*/
+
+    #payment-container {
+        width: 100%;
+        display: flex;
+    }
+
+    .payment-bill {
+        width: 53%;
+    }
+
+    .pay-btn {
+        font-size: 20px;
+        height: 50px;
+    }
+
 }
 
 @media screen and (min-width:1200px) {
@@ -1343,4 +1464,23 @@
     }
 
     /*-----------------------------Payment section--------------------------------*/
+
+    #payment-container {
+        width: 100%;
+        display: flex;
+    }
+
+    .payment-fields-container {
+        width: 50%;
+    }
+
+    .payment-bill {
+        width: 55%;
+    }
+
+    .pay-btn {
+        font-size: 25px;
+        height: 60px;
+    }
+
 }

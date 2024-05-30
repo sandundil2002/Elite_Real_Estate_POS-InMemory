@@ -247,7 +247,7 @@ tbody tr:nth-child(even) {
     height: auto;
 }
 
-.section-title{
+.section-title {
     font-family: "Poppins", sans-serif;
 }
 
@@ -330,7 +330,8 @@ tbody tr:nth-child(even) {
 .status-combo {
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color :#28a745;;
+    background-color: #28a745;
+    ;
     color: white;
     background-repeat: no-repeat;
     background-position: right 5px center;
@@ -362,65 +363,61 @@ tbody tr:nth-child(even) {
 
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Caveat:wght@400..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
 
-#payment-section{
+#payment-section {
     width: 100%;
     height: 100%;
     text-align: center;
 }
 
-#payment-container{
+#payment-container {
     width: 100%;
-    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.payment-fields-container{
-    width: 50%;
+.payment-fields-container {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(2 ,1fr);
-    padding-left: 3%;
-    padding-right: 3%;
-    row-gap: 20%;
-    column-gap: 5%;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 25%;
+    column-gap: 10%;
 }
 
-.payment-fields-container input{
+.payment-fields-container input {
     width: 100%;
 }
 
-.payment-fields-container select{
+.payment-fields-container select {
     width: 100%;
 }
 
-#payment-method{
+#payment-method {
     margin-left: 50%;
 }
 
-.payment-bill{
-    width: 50%;
-    margin-right: 3%;
+.payment-bill {
     border: none;
     background-color: #e08a8a;
-    padding: 1%;
     border-radius: 5px;
+    margin-left: 1%;
+    padding: 1%;
 }
 
-#bill-topbar{
+#bill-topbar {
     display: flex;
     justify-content: space-between;
 }
 
-#company-details h5{
+#company-details h5 {
     font-family: "Montserrat";
-    font-weight: 600;
-    font-style: italic;
+    font-weight: bold;
 }
 
-#company-details{
+#company-details {
     text-align: left;
 }
 
-#bill-to-container{
+#bill-to-container {
     display: flex;
     justify-content: space-between;
     border: none;
@@ -429,13 +426,12 @@ tbody tr:nth-child(even) {
     border-radius: 5px;
 }
 
-#left-side{
+#left-side {
     text-align: left;
     line-height: 130%;
 }
 
-#right-side{
-    padding-top: 7.3%;
+#right-side {
     text-align: left;
     line-height: 130%;
 }
@@ -455,9 +451,7 @@ tbody tr:nth-child(even) {
     text-align: center;
     margin-top: 20px;
     font-family: monospace;
-    /* Ensures equal-width characters */
     font-size: 16px;
-    /* Adjust size as needed */
     padding: 10px 0;
 }
 
@@ -477,4 +471,17 @@ tbody tr:nth-child(even) {
     background: #ddabab;
     padding: 0 10px;
     margin-top: 10px;
+}
+
+.pay-btn {
+    border: 1px solid;
+    border-radius: 50px;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.pay-btn:hover{
+    background-color: #218838;
 }
