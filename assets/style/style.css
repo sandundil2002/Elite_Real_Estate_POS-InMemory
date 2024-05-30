@@ -8,7 +8,6 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    text-transform: capitalize;
     border: none;
     outline: none;
     -webkit-transition: all 0.2s linear;
@@ -140,7 +139,7 @@ html {
 
 .bar {
     background-color: #e08a8a;
-    position: relative;
+    position: static;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -361,10 +360,17 @@ tbody tr:nth-child(even) {
 
 /*---------------------------------Payment section------------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Caveat:wght@400..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
 #payment-section{
     width: 100%;
     height: 100%;
     text-align: center;
+}
+
+#payment-container{
+    width: 100%;
+    display: flex;
 }
 
 .payment-fields-container{
@@ -388,4 +394,87 @@ tbody tr:nth-child(even) {
 
 #payment-method{
     margin-left: 50%;
+}
+
+.payment-bill{
+    width: 50%;
+    margin-right: 3%;
+    border: none;
+    background-color: #e08a8a;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+#bill-topbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+#company-details h5{
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-style: italic;
+}
+
+#company-details{
+    text-align: left;
+}
+
+#bill-to-container{
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: #ddabab;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+#left-side{
+    text-align: left;
+    line-height: 130%;
+}
+
+#right-side{
+    padding-top: 7.3%;
+    text-align: left;
+    line-height: 130%;
+}
+
+.total {
+    width: 100%;
+}
+
+.price-tbl {
+    float: right;
+    width: 40%;
+    border-collapse: collapse;
+}
+
+.bill-footer {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-family: monospace;
+    /* Ensures equal-width characters */
+    font-size: 16px;
+    /* Adjust size as needed */
+    padding: 10px 0;
+}
+
+.bill-footer::before {
+    content: "=========================================================================================================================================================================================";
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bill-footer span {
+    display: block;
+    position: relative;
+    z-index: 1;
+    background: #ddabab;
+    padding: 0 10px;
+    margin-top: 10px;
 }
