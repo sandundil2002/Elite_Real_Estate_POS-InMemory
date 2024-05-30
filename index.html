@@ -221,19 +221,19 @@
         <div id="input-fields">
             <select name="Admn-id" id="admin-id" class="combo-box">
                 <option value="">Admin ID</option>
-                <option value="">Admin 01</option>
-                <option value="">Admin 02</option>
+                <option value="Adm000-001">Admin 01</option>
+                <option value="Adm000-002">Admin 02</option>
             </select>
 
-            <input type="text" class="combo-box" placeholder="Customer Name">
+            <input type="text" id="name" class="combo-box" placeholder="Customer Name">
 
-            <input type="date" class="combo-box">
+            <input type="number" id="mobile" class="combo-box" placeholder="Customer Mobile">
 
-            <input type="time" class="combo-box">
+            <input type="datetime-local" id="date-time" class="combo-box">
         </div> <br>
 
         <div id="crud-btn-container">
-            <button class="crud-btn">Add</button>
+            <button onclick="saveAppointment()" class="crud-btn">Add</button>
             <button class="crud-btn">update</button>
             <button class="crud-btn">Search</button>
             <button class="crud-btn">Delete</button>
@@ -885,6 +885,8 @@
 
     <script src="/controller/dashboardController.js"></script>
     <script src="/model/dashboard.js"></script>
+    <script src="/controller/appointmentController.js"></script>
+    <script src="/model/appointment.js"></script>
 </body>
 
 </html>
