@@ -18,3 +18,7 @@ export function addAppointment(appId, adminId, name, mobile, dateTime) {
 export function updateAppointment(index, updatedAppointment) {
   Appointments[index] = updatedAppointment;
 }
+
+export function deleteAppointment(index) {
+  Appointments.splice(index, 1)
+}

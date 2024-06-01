@@ -2,12 +2,12 @@ import {
   addAppointment,
   getAllAppointments,
   updateAppointment,
+  deleteAppointment,
 } from "../model/appointmentModel.js";
 
 function generateAppointmentID() {
   let lastID = $("#app-id").val();
-  console.log(lastID);
-
+  
   if (!lastID) {
     lastID = "A000";
   }
@@ -142,6 +142,25 @@ $(document).ready(function () {
       $("#app-cus-mobile").val(appointment.mobile);
       $("#app-date-time").val(appointment.dateTime);
       console.log(appointment);
+    } else {
+      alert("Appointment Not Found");
+    }
+  });
+});
+
+$(document).ready(function () {
+  $("#appo-delete").click(function () {
+    const appId = $("#app-id").val();
+
+    const index = getAllAppointments().findIndex(
+      (appointment) => appointment.appId === appId
+    );
+
+    if (index !== -1) {
+      deleteAppointment(index);
+      const tbody = $("#app-tbl");
+      tbody.empty();
+      loadAllAppointments(getAllAppointments());
     } else {
       alert("Appointment Not Found");
     }
