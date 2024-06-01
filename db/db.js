@@ -8,7 +8,7 @@ export let Appointments = [
   },
   {
     appId: "A002",
-    adminId: "Adm001",
+    adminId: "Adm002",
     name: "sandun",
     mobile: "762357995",
     dateTime: "2024-01-01T12:00",

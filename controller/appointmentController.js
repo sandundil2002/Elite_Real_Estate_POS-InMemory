@@ -7,12 +7,12 @@ import {
 function generateAppointmentID() {
   let lastID = $("#app-id").val();
   console.log(lastID);
-  
+
   if (!lastID) {
     lastID = "A000";
   }
 
-  let newID = "A" + (parseInt(lastID.slice(1)) + 1).toString().padStart(3, '0');
+  let newID = "A" + (parseInt(lastID.slice(1)) + 1).toString().padStart(3, "0");
   localStorage.setItem("lastAppID", newID);
   return newID;
 }
@@ -109,7 +109,7 @@ $(document).ready(function () {
       };
 
       updateAppointment(index, updatedAppointment);
-      updateTable(index, updatedAppointment)
+      updateTable(index, updatedAppointment);
     } else {
       alert("Appointment not found");
     }
@@ -126,3 +126,24 @@ function updateTable(index, updatedAppointment) {
   row.find("td").eq(3).text(updatedAppointment.mobile);
   row.find("td").eq(4).text(updatedAppointment.dateTime);
 }
+
+$(document).ready(function () {
+  $("#appo-search").click(function () {
+    const appId = $("#app-id").val();
+
+    const index = getAllAppointments().findIndex(
+      (appointment) => appointment.appId === appId
+    );
+
+    if (index !== -1) {
+      const appointment = getAllAppointments()[index];
+      $("#app-admin-id").val(appointment.adminId);
+      $("#app-cus-name").val(appointment.name);
+      $("#app-cus-mobile").val(appointment.mobile);
+      $("#app-date-time").val(appointment.dateTime);
+      console.log(appointment);
+    } else {
+      alert("Appointment Not Found");
+    }
+  });
+});
