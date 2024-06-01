@@ -3,6 +3,24 @@ import {
   getAllAppointments,
 } from "../model/appointmentModel.js";
 
+function generateAppointmentID() {
+  let lastID = $("#app-id").val();
+  console.log(lastID);
+  
+  if (!lastID) {
+    lastID = "A000";
+  }
+
+  let newID = "A" + (parseInt(lastID.slice(1)) + 1).toString().padStart(3, '0');
+  localStorage.setItem("lastAppID", newID);
+  return newID;
+}
+
+function setAppointmentID() {
+  const newID = generateAppointmentID();
+  $("#app-id").val(newID);
+}
+
 $(document).ready(function () {
   $("#appo-add").click(function () {
     const appointmentArray = [
@@ -16,6 +34,7 @@ $(document).ready(function () {
     const [appId, adminId, name, mobile, dateTime] = appointmentArray;
     addAppointment(appId, adminId, name, mobile, dateTime);
     reloadTable(appointmentArray);
+    setAppointmentID()
   });
   loadAllAppointments(getAllAppointments());
 });
