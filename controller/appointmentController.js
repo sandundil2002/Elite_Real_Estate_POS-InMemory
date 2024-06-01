@@ -1,6 +1,7 @@
 import {
   addAppointment,
   getAllAppointments,
+  updateAppointment,
 } from "../model/appointmentModel.js";
 
 function generateAppointmentID() {
@@ -21,26 +22,29 @@ function setAppointmentID() {
   $("#app-id").val(newID);
 }
 
-$(document).ready(function () {
-  $("#appo-add").click(function () {
-    const appointmentArray = [
-      $("#app-id").val(),
-      $("#app-admin-id").val(),
-      $("#app-cus-name").val(),
-      $("#app-cus-mobile").val(),
-      $("#app-date-time").val(),
-    ];
+function loadAllAppointments(appointments) {
+  const tbody = $("#app-tbl");
 
-    const [appId, adminId, name, mobile, dateTime] = appointmentArray;
-    addAppointment(appId, adminId, name, mobile, dateTime);
-    reloadTable(appointmentArray);
-    setAppointmentID()
+  appointments.forEach((appointment) => {
+    const row = `<tr>
+      <td>${appointment.appId}</td>
+      <td>${appointment.adminId}</td>
+      <td>${appointment.name}</td>
+      <td>${appointment.mobile}</td>
+      <td>${appointment.dateTime}</td>
+      <td>
+        <select name="Status" class="status-combo">
+          <option value="pending" class="pending">Pending</option>
+          <option value="complete" class="complete">Complete</option>
+          <option value="cancel" class="cancel">Cancel</option>
+        </select>
+      </td>
+    </tr>`;
+    tbody.append(row);
   });
-  loadAllAppointments(getAllAppointments());
-});
+}
 
 function reloadTable(appointmentArray) {
-  console.log(appointmentArray);
   $("#app-tbl").append(
     "<tr>" +
       "<td>" +
@@ -69,24 +73,56 @@ function reloadTable(appointmentArray) {
   );
 }
 
-function loadAllAppointments(appointments) {
-  const tbody = $("#app-tbl");
+$(document).ready(function () {
+  $("#appo-add").click(function () {
+    const appointmentArray = [
+      $("#app-id").val(),
+      $("#app-admin-id").val(),
+      $("#app-cus-name").val(),
+      $("#app-cus-mobile").val(),
+      $("#app-date-time").val(),
+    ];
 
-  appointments.forEach((appointment) => {
-    const row = `<tr>
-      <td>${appointment.appId}</td>
-      <td>${appointment.adminId}</td>
-      <td>${appointment.name}</td>
-      <td>${appointment.mobile}</td>
-      <td>${appointment.dateTime}</td>
-      <td>
-        <select name="Status" class="status-combo">
-          <option value="pending" class="pending">Pending</option>
-          <option value="complete" class="complete">Complete</option>
-          <option value="cancel" class="cancel">Cancel</option>
-        </select>
-      </td>
-    </tr>`;
-    tbody.append(row);
+    const [appId, adminId, name, mobile, dateTime] = appointmentArray;
+    addAppointment(appId, adminId, name, mobile, dateTime);
+    reloadTable(appointmentArray);
+    setAppointmentID();
   });
+  loadAllAppointments(getAllAppointments());
+});
+
+$(document).ready(function () {
+  $("#appo-update").click(function () {
+    const appId = $("#app-id").val();
+
+    const index = getAllAppointments().findIndex(
+      (appointment) => appointment.appId === appId
+    );
+
+    if (index !== -1) {
+      const updatedAppointment = {
+        appId: appId,
+        adminId: $("#app-admin-id").val(),
+        name: $("#app-cus-name").val(),
+        mobile: $("#app-cus-mobile").val(),
+        dateTime: $("#app-date-time").val(),
+      };
+
+      updateAppointment(index, updatedAppointment);
+      updateTable(index, updatedAppointment)
+    } else {
+      alert("Appointment not found");
+    }
+  });
+});
+
+function updateTable(index, updatedAppointment) {
+  const tableBody = $("#app-tbl");
+  const row = tableBody.find("tr").eq(index);
+
+  row.find("td").eq(0).text(updatedAppointment.appId);
+  row.find("td").eq(1).text(updatedAppointment.adminId);
+  row.find("td").eq(2).text(updatedAppointment.name);
+  row.find("td").eq(3).text(updatedAppointment.mobile);
+  row.find("td").eq(4).text(updatedAppointment.dateTime);
 }
