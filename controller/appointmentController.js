@@ -3,11 +3,12 @@ import {
   getAllAppointments,
   updateAppointment,
   deleteAppointment,
+  validateAppointment,
 } from "../model/appointmentModel.js";
 
 function generateAppointmentID() {
   let lastID = $("#app-id").val();
-  
+
   if (!lastID) {
     lastID = "A000";
   }
@@ -84,9 +85,11 @@ $(document).ready(function () {
     ];
 
     const [appId, adminId, name, mobile, dateTime] = appointmentArray;
-    addAppointment(appId, adminId, name, mobile, dateTime);
-    reloadTable(appointmentArray);
-    setAppointmentID();
+    if (checkValidation()) {
+      addAppointment(appId, adminId, name, mobile, dateTime);
+      reloadTable(appointmentArray);
+      setAppointmentID();
+    }
   });
   loadAllAppointments(getAllAppointments());
 });
@@ -108,8 +111,10 @@ $(document).ready(function () {
         dateTime: $("#app-date-time").val(),
       };
 
-      updateAppointment(index, updatedAppointment);
-      updateTable(index, updatedAppointment);
+      if (checkValidation()) {
+        updateAppointment(index, updatedAppointment);
+        updateTable(index, updatedAppointment);
+      }
     } else {
       alert("Appointment not found");
     }
@@ -166,3 +171,15 @@ $(document).ready(function () {
     }
   });
 });
+
+function checkValidation() {
+  const appointment = {
+    appId: $("#app-id").val(),
+    adminId: $("#app-admin-id").val(),
+    name: $("#app-cus-name").val(),
+    mobile: $("#app-cus-mobile").val(),
+    dateTime: $("#app-date-time").val(),
+  };
+
+  return validateAppointment(appointment);
+}
