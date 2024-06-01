@@ -220,21 +220,21 @@
         </div><br>
 
         <div id="input-fields">
-            <select name="Admn-id" id="admin-id" class="combo-box">
+            <select name="Admn-id" id="app-admin-id" class="combo-box">
                 <option value="">Admin ID</option>
-                <option value="Adm000-001">Admin 01</option>
-                <option value="Adm000-002">Admin 02</option>
+                <option value="Adm001">Admin 01</option>
+                <option value="Adm002">Admin 02</option>
             </select>
 
-            <input type="text" id="name" class="combo-box" placeholder="Customer Name">
+            <input type="text" id="app-cus-name" class="combo-box" placeholder="Customer Name">
 
-            <input type="number" id="mobile" class="combo-box" placeholder="Customer Mobile">
+            <input type="number" id="app-cus-mobile" class="combo-box" placeholder="Customer Mobile">
 
-            <input type="datetime-local" id="date-time" class="combo-box">
+            <input type="datetime-local" id="app-date-time" class="combo-box">
         </div> <br>
 
         <div id="crud-btn-container">
-            <button class="crud-btn">Add</button>
+            <button id="appo-add" class="crud-btn">Add</button>
             <button class="crud-btn">update</button>
             <button class="crud-btn">Search</button>
             <button class="crud-btn">Delete</button>
@@ -252,103 +252,9 @@
                 </tr>
             </thead>
 
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <select name="Status" class="status-combo">
-                            <option value="pending" class="pending">Pending</option>
-                            <option value="complete" class="complete">Complete</option>
-                            <option value="cancel" class="cancel">Cancel</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tbody id="app-tbl">
             </tbody>
+
         </table>
     </section><br>
 
@@ -857,13 +763,16 @@
     </section><br>
 
     <div id="break-line">Page 06</div>
-
-
+</body>
 
     <script src="/controller/dashboardController.js"></script>
     <script src="/model/dashboard.js"></script>
-    <script src="/controller/appointmentController.js"></script>
-    <script src="/model/appointment.js"></script>
-</body>
+    <script type="module" src="/controller/appointmentController.js"></script>
+    <script>
+        $("#app-id").ready(function () {
+            $("#app-id").val("A001");
+        });
+    </script>
 
 </html>
+
