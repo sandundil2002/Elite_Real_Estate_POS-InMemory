@@ -99,6 +99,30 @@ $("#age-add").click(function () {
   }
 });
 
+$("#age-update").click(function () {
+  const ageId = $("#age-id").val();
+
+  const index = getAllAgents().findIndex(
+    (agent) => agent.ageId === ageId
+  );
+
+  if (index !== -1) {
+    const updatedAgent = {
+      ageId: ageId,
+      admId: $("#age-adm-id").val(),
+      name: $("#age-name").val(),
+      address: $("age-address").val(),
+      mobile: $("#age-mobile").val(),
+      email: $("#age-email").val(),
+    };
+
+    if (checkValidation()) {
+      updateAgent(index, updatedAgent);
+      updateTable(index, updatedAgent);
+    }
+  }
+});
+
 function checkValidation() {
   const agent = {
     ageId: $("#age-id").val(),
