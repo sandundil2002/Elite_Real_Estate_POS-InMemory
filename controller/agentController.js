@@ -142,6 +142,22 @@ $("#age-search").click(function () {
   }
 });
 
+$("#age-delete").click(function () {
+  const ageId = $("#age-id").val();
+
+  const index = getAllAgents().findIndex((
+    agent) => agent.ageId === ageId);
+
+  if (index !== -1) {
+    deleteAgent(index);
+    const tbody = $("#age-tbl");
+    tbody.empty();
+    loadAllAgents(getAllAgents());
+  } else {
+    alert("Agent Not Found");
+  }
+});
+
 function checkValidation() {
   const agent = {
     ageId: $("#age-id").val(),
