@@ -146,7 +146,6 @@ $(document).ready(function () {
       $("#app-cus-name").val(appointment.name);
       $("#app-cus-mobile").val(appointment.mobile);
       $("#app-date-time").val(appointment.dateTime);
-      console.log(appointment);
     } else {
       alert("Appointment Not Found");
     }

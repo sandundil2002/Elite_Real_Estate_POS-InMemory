@@ -140,6 +140,28 @@ $("#cus-update").click(function () {
   }
 });
 
+ $("#cus-search").click(function () {
+   const cusId = $("#cus-id").val();
+
+   const index = getAllCustomers().findIndex(
+     (customer) => customer.cusId === cusId
+   );
+
+   if (index !== -1) {
+     const customer = getAllCustomers()[index];
+     console.log(customer);
+     $("#cus-app-id").val(customer.appId.trim());
+     $("#cus-name").val(customer.cusName.trim());
+     $("#cus-address").val(customer.address.trim());
+     $("#cus-mobile").val(customer.cusMobile.trim());
+     $("#cus-email").val(customer.cusEmail.trim());
+     stopForeignKeyLoad();
+     setTimeout(startForeignKeyLoad, 20000);
+   } else {
+     alert("Customer Not Found");
+   }
+ });
+
 function startForeignKeyLoad() {
   foreignKeyInterval = setInterval(loadAppointmentIDs, 1000);
 }
