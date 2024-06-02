@@ -123,6 +123,25 @@ $("#age-update").click(function () {
   }
 });
 
+$("#age-search").click(function () {
+  const ageId = $("#age-id").val();
+
+  const index = getAllAgents().findIndex(
+    (agent) => agent.ageId === ageId
+  );
+
+  if (index !== -1) {
+    const agent = getAllAgents()[index];
+    $("#age-adm-id").val(agent.admId.trim());
+    $("#age-name").val(agent.ageName.trim());
+    $("#age-address").val(agent.ageAddress.trim());
+    $("#age-mobile").val(agent.ageMobile.trim());
+    $("#age-email").val(agent.ageEmail.trim());
+  } else {
+    alert("Agent Not Found");
+  }
+});
+
 function checkValidation() {
   const agent = {
     ageId: $("#age-id").val(),

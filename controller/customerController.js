@@ -156,7 +156,6 @@ $("#cus-search").click(function () {
 
   if (index !== -1) {
     const customer = getAllCustomers()[index];
-    console.log(customer);
     $("#cus-app-id").val(customer.appId.trim());
     $("#cus-name").val(customer.cusName.trim());
     $("#cus-address").val(customer.address.trim());
