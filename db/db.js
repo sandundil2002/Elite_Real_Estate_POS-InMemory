@@ -93,7 +93,7 @@ export let Agents = [
     admId: "Adm001",
     ageName: "Sahan",
     ageAddress: "Galle",
-    ageMobile: "7562870601",
+    ageMobile: "756287601",
     ageEmail: "sahan@gmail.com",
   },
 

@@ -6,6 +6,10 @@ import {
   validateAgent
 } from "../model/agentModel.js";
 
+$(document).ready(function () {
+    loadAllAgents(getAllAgents());
+});
+
 function generateAgentID() {
   let lastID = $("#age-id").val();
 
@@ -21,4 +25,20 @@ function generateAgentID() {
 function setAgentID() {
   const newID = generateAgentID();
   $("#age-id").val(newID);
+}
+
+function loadAllAgents(agents) {
+  const tbody = $("#age-tbl");
+
+  agents.forEach((agent) => {
+    const row = `<tr>
+      <td>${agent.ageId}</td>
+      <td>${agent.admId}</td>
+      <td>${agent.ageName}</td>
+      <td>${agent.ageAddress}</td>
+      <td>${agent.ageMobile}</td>
+      <td>${agent.ageEmail}</td>
+    </tr>`;
+    tbody.append(row);
+  });
 }
