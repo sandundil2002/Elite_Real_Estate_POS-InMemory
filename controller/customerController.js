@@ -1,4 +1,9 @@
-import { getAllCustomer } from "../model/customerModel.js";
+import { getAllCustomer, getAllAppointments } from "../model/customerModel.js";
+
+$(document).ready(function () {
+  loadAppointmentIDs();
+  setInterval(loadAppointmentIDs, 1000);
+});
 
 function generateCustomerID() {
   let lastID = $("#cus-id").val();
@@ -30,6 +35,19 @@ function loadAllCustomers(customers) {
       <td>${customer.cusEmail}</td>
     </tr>`;
     tbody.append(row);
+  });
+}
+
+function loadAppointmentIDs() {
+  const appointments = getAllAppointments();
+  const selectElement = $("#cus-app-id");
+  
+  selectElement.empty();
+  selectElement.append('<option value="">Appointment ID</option>'); 
+
+  appointments.forEach((appointment) => {
+    const option = `<option value="${appointment.appId}">${appointment.appId}</option>`;
+    selectElement.append(option);
   });
 }
 

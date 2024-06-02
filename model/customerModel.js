@@ -1,4 +1,8 @@
-import { Customers } from "../db/db.js";
+import { Customers, Appointments } from "../db/db.js";
+
+export function getAllAppointments() {
+  return Appointments;
+}
 
 export function getAllCustomer() {
   return Customers;
