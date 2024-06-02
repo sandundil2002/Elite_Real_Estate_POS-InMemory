@@ -4,7 +4,7 @@ export function getAllAppointments() {
   return Appointments;
 }
 
-export function getAllCustomer() {
+export function getAllCustomers() {
   return Customers;
 }
 
@@ -18,4 +18,8 @@ export function addCustomer(cusId,appId,cusName,cusAddress,cusMobile,cusEmail) {
     cusEmail: cusEmail
 };
   Customers.push(newCustomer);
+}
+
+export function updateCustomer(index, updatedCustomer) {
+  Customers[index] = updatedCustomer;
 }

@@ -1,9 +1,14 @@
-import { getAllCustomer, getAllAppointments, addCustomer } from "../model/customerModel.js";
+import {
+  getAllCustomers,
+  getAllAppointments,
+  addCustomer,
+  updateCustomer,
+} from "../model/customerModel.js";
 
 let foreignKeyInterval;
 
 $(document).ready(function () {
-  loadAllCustomers(getAllCustomer());
+  loadAllCustomers(getAllCustomers());
   loadAppointmentIDs();
   startForeignKeyLoad();
 
@@ -84,6 +89,18 @@ function reloadTable(customerArray) {
   );
 }
 
+function updateTable(index, updatedCustomer) {
+  const tableBody = $("#cus-tbl");
+  const row = tableBody.find("tr").eq(index);
+
+  row.find("td").eq(0).text(updatedCustomer.cusId);
+  row.find("td").eq(1).text(updatedCustomer.appId);
+  row.find("td").eq(2).text(updatedCustomer.name);
+  row.find("td").eq(3).text(updatedCustomer.address);
+  row.find("td").eq(4).text(updatedCustomer.mobile);
+  row.find("td").eq(5).text(updatedCustomer.email);
+}
+
 $("#cus-add").click(function () {
   const customerArray = [
     $("#cus-id").val(),
@@ -94,10 +111,33 @@ $("#cus-add").click(function () {
     $("#cus-email").val(),
   ];
 
-  const [cusId, appId, cusName, cusAddress, cusMobile, cusEmail] = customerArray;
+  const [cusId, appId, cusName, cusAddress, cusMobile, cusEmail] =
+    customerArray;
 
   addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
   reloadTable(customerArray);
+});
+
+$("#cus-update").click(function () {
+  const cusId = $("#cus-id").val();
+
+  const index = getAllCustomers().findIndex(
+    (customer) => customer.cusId === cusId
+  );
+
+  if (index !== -1) {
+    const updatedCustomer = {
+      cusId: cusId,
+      appId: $("#cus-app-id").val(),
+      name: $("#cus-name").val(),
+      address: $("cus-address").val(),
+      mobile: $("#cus-mobile").val(),
+      email: $("#cus-email").val(),
+    };
+
+    updateCustomer(index, updatedCustomer);
+    updateTable(index, updatedCustomer);
+  }
 });
 
 function startForeignKeyLoad() {
