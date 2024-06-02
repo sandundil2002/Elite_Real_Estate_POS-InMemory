@@ -215,7 +215,7 @@
         <div id="appointment-frame">
             <div id="appointment-topbar">
                 <h1 class="section-title">APPOINTMENTS OF ELITE</h1>
-                <input type="text" id="app-id" placeholder="Appointment ID">
+                <input type="text" class="id" id="app-id" placeholder="Appointment ID">
             </div>
         </div><br>
 
@@ -264,27 +264,25 @@
     <section id="customer-section">
         <div id="section-topbar">
             <h1 class="section-title">CUSTOMERS OF ELITE</h1>
-            <input type="text" id="app-id" placeholder="Customer ID">
+            <input type="text" class="id" id="cus-id" placeholder="Customer ID">
         </div><br>
 
         <div id="input-fields">
             <select name="Appointment ID" id="appointment-id" class="combo-box">
                 <option value="">Appointment ID</option>
-                <option value="">A001</option>
-                <option value="">A002</option>
             </select>
 
-            <input type="text" class="combo-box" placeholder="Customer Name">
-            <input type="text" class="combo-box" placeholder="Address">
-            <input type="number" class="combo-box" placeholder="Mobile">
-            <input type="email" class="combo-box" placeholder="E-Mail">
+            <input type="text" id="cus-name" class="combo-box" placeholder="Customer Name">
+            <input type="text" id="cus-address" class="combo-box" placeholder="Address">
+            <input type="number" id="cus-mobile" class="combo-box" placeholder="Mobile">
+            <input type="email" id="cus-email" class="combo-box" placeholder="E-Mail">
         </div> <br>
 
         <div id="crud-btn-container">
-            <button class="crud-btn">Add</button>
-            <button class="crud-btn">update</button>
-            <button class="crud-btn">Search</button>
-            <button class="crud-btn">Delete</button>
+            <button id="cus-add" class="crud-btn">Add</button>
+            <button id="cus-update" class="crud-btn">update</button>
+            <button id="cus-search" class="crud-btn">Search</button>
+            <button id="cus-delete" class="crud-btn">Delete</button>
         </div><br>
 
         <table id="table-manage">
@@ -299,96 +297,7 @@
                 </tr>
             </thead>
 
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tbody id="cus-tbl">
             </tbody>
         </table>
     </section><br>
@@ -766,14 +675,17 @@
     <div id="break-line">Page 06</div>
 </body>
 
-    <script src="/controller/dashboardController.js"></script>
-    <script src="/model/dashboard.js"></script>
-    <script type="module" src="/controller/appointmentController.js"></script>
-    <script>
-        $("#app-id").ready(function () {
-            $("#app-id").val("A003");
-        });
-    </script>
+<script src="/controller/dashboardController.js"></script>
+<script src="/model/dashboard.js"></script>
+<script type="module" src="/controller/appointmentController.js"></script>
+<script>
+    $("#app-id").ready(function () {
+        $("#app-id").val("A006");
+    });
+
+    $("#cus-id").ready(function () {
+        $("#cus-id").val("C006");
+    });
+</script>
 
 </html>
-

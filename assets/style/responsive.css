@@ -212,7 +212,7 @@
         display: none;
     }
 
-    #app-id {
+    .id {
         width: 28%;
         height: 20px;
         font-size: 10px;
@@ -489,7 +489,7 @@
         display: none;
     }
 
-    #app-id {
+    .id {
         width: 28%;
         height: 25px;
         font-size: 12px;
@@ -767,7 +767,7 @@
         display: none;
     }
 
-    #app-id {
+    .id {
         width: 28%;
         height: 30px;
         font-size: 16px;
@@ -1025,7 +1025,7 @@
         display: none;
     }
 
-    #app-id {
+    .id {
         width: 28%;
         height: 35px;
         font-size: 18px;
@@ -1234,7 +1234,7 @@
         padding-left: 10%;
     }
 
-    #app-id {
+    .id {
         width: 28%;
         height: 40px;
         font-size: 20px;
@@ -1423,7 +1423,7 @@
         padding-left: 10%;
     }
 
-    #app-id {
+    .id {
         width: 28%;
         height: 50px;
         font-size: 25px;

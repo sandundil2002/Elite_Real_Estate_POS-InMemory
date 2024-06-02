@@ -257,14 +257,14 @@ tbody tr:nth-child(even) {
     justify-content: space-evenly;
 }
 
-#app-id {
+.id {
     border: 1px solid black;
     border-radius: 25px;
     text-align: center;
     background-color: #e3ecf5;
 }
 
-#app-id:hover {
+.id:hover {
     background-color: #cdd6df;
 }
 
