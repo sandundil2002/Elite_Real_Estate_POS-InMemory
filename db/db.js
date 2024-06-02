@@ -86,3 +86,50 @@ export let Customers = [
     cusEmail: "vimal@gmail.com",
   },
 ];
+
+export let Agents = [
+  {
+    ageId: "Age001",
+    admId: "Adm001",
+    ageName: "Sahan",
+    ageAddress: "Galle",
+    ageMobile: "7562870601",
+    ageEmail: "sahan@gmail.com",
+  },
+
+  {
+    ageId: "Age002",
+    admId: "Adm003",
+    ageName: "Pahan",
+    ageAddress: "Mathara",
+    ageMobile: "786245701",
+    ageEmail: "pahan@gmail.com",
+  },
+
+  {
+    ageId: "Age003",
+    admId: "Adm002",
+    ageName: "Rohan",
+    ageAddress: "Gampaha",
+    ageMobile: "714500289",
+    ageEmail: "rohan@gmail.com",
+  },
+
+  {
+    ageId: "Age004",
+    admId: "Adm001",
+    ageName: "Nihal",
+    ageAddress: "Colombo",
+    ageMobile: "708502469",
+    ageEmail: "nihal@gmail.com",
+  },
+
+  {
+    ageId: "Age005",
+    admId: "Adm002",
+    ageName: "Saman",
+    ageAddress: "Anuradapura",
+    ageMobile: "746258963",
+    ageEmail: "saman@gmail.com",
+  },
+];

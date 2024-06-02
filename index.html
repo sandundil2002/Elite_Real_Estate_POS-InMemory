@@ -306,27 +306,28 @@
     <section id="agent-section">
         <div id="section-topbar">
             <h1 class="section-title">AGENTS OF ELITE</h1>
-            <input type="text" id="app-id" placeholder="Agent ID">
+            <input type="text" class="id" id="age-id" placeholder="Agent ID">
         </div><br>
 
         <div id="input-fields">
-            <select name="Admn-id" id="admin-id" class="combo-box">
+            <select name="Admn-id" id="age-adm-id" class="combo-box">
                 <option value="">Admin ID</option>
-                <option value="">Admin 01</option>
-                <option value="">Admin 02</option>
+                <option value="Adm001">Admin 01</option>
+                <option value="Adm002">Admin 02</option>
+                <option value="Adm003">Admin 03</option>
             </select>
 
-            <input type="text" class="combo-box" placeholder="Name">
-            <input type="text" class="combo-box" placeholder="Address">
-            <input type="number" class="combo-box" placeholder="Mobile">
-            <input type="email" class="combo-box" placeholder="E-mail">
+            <input type="text" id="age-name" class="combo-box" placeholder="Name">
+            <input type="text" id="age-address" class="combo-box" placeholder="Address">
+            <input type="number" id="age-mobile" class="combo-box" placeholder="Mobile">
+            <input type="email" id="age-email" class="combo-box" placeholder="E-mail">
         </div> <br>
 
         <div id="crud-btn-container">
-            <button class="crud-btn">Add</button>
-            <button class="crud-btn">update</button>
-            <button class="crud-btn">Search</button>
-            <button class="crud-btn">Delete</button>
+            <button id="age-add" class="crud-btn">Add</button>
+            <button id="age-update" class="crud-btn">update</button>
+            <button id="age-search" class="crud-btn">Search</button>
+            <button id="age-delete" class="crud-btn">Delete</button>
         </div><br>
 
         <table id="table-manage">
@@ -341,96 +342,7 @@
                 </tr>
             </thead>
 
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tbody id="age-tbl">
             </tbody>
         </table>
     </section><br>
