@@ -1,8 +1,16 @@
-import { getAllCustomer, getAllAppointments } from "../model/customerModel.js";
+import { getAllCustomer, getAllAppointments, addCustomer } from "../model/customerModel.js";
+
+let foreignKeyInterval;
 
 $(document).ready(function () {
+  loadAllCustomers(getAllCustomer());
   loadAppointmentIDs();
-  setInterval(loadAppointmentIDs, 1000);
+  startForeignKeyLoad();
+
+  $("#cus-app-id").on("change", function () {
+    stopForeignKeyLoad();
+    setTimeout(startForeignKeyLoad, 20000);
+  });
 });
 
 function generateCustomerID() {
@@ -41,9 +49,9 @@ function loadAllCustomers(customers) {
 function loadAppointmentIDs() {
   const appointments = getAllAppointments();
   const selectElement = $("#cus-app-id");
-  
+
   selectElement.empty();
-  selectElement.append('<option value="">Appointment ID</option>'); 
+  selectElement.append('<option value="">Appointment ID</option>');
 
   appointments.forEach((appointment) => {
     const option = `<option value="${appointment.appId}">${appointment.appId}</option>`;
@@ -51,24 +59,51 @@ function loadAppointmentIDs() {
   });
 }
 
-$(document).ready(function () {
-  $("#cus-add").click(function () {
-    console.log("click");
-    const customerArray = [
-      $("#cus-id").val(),
-      $("#cus-app-id").val(),
-      $("#cus-name").val(),
-      $("#cus-address").val(),
-      $("#cus-mobile").val(),
-      $("#cus-email").val(),
-    ];
+function reloadTable(customerArray) {
+  $("#cus-tbl").append(
+    "<tr>" +
+      "<td>" +
+      customerArray[0] +
+      "</td>" +
+      "<td>" +
+      customerArray[1] +
+      "</td>" +
+      "<td>" +
+      customerArray[2] +
+      "</td>" +
+      "<td>" +
+      customerArray[3] +
+      "</td>" +
+      "<td>" +
+      customerArray[4] +
+      "</td>" +
+      "<td>" +
+      customerArray[5] +
+      "</td>" +
+      "</tr>"
+  );
+}
 
-    const [cusId, appId, cusName, cusAddress, cusMobile, cusEmail] =
-      customerArray;
+$("#cus-add").click(function () {
+  const customerArray = [
+    $("#cus-id").val(),
+    $("#cus-app-id").val(),
+    $("#cus-name").val(),
+    $("#cus-address").val(),
+    $("#cus-mobile").val(),
+    $("#cus-email").val(),
+  ];
 
-    addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
-    loadAllCustomers(getAllCustomer());
-  });
+  const [cusId, appId, cusName, cusAddress, cusMobile, cusEmail] = customerArray;
 
-  loadAllCustomers(getAllCustomer());
+  addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
+  reloadTable(customerArray);
 });
+
+function startForeignKeyLoad() {
+  foreignKeyInterval = setInterval(loadAppointmentIDs, 1000);
+}
+
+function stopForeignKeyLoad() {
+  clearInterval(foreignKeyInterval);
+}
