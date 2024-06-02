@@ -89,7 +89,7 @@ export let Customers = [
 
 export let Agents = [
   {
-    ageId: "Age001",
+    ageId: "S001",
     admId: "Adm001",
     ageName: "Sahan",
     ageAddress: "Galle",
@@ -98,7 +98,7 @@ export let Agents = [
   },
 
   {
-    ageId: "Age002",
+    ageId: "S002",
     admId: "Adm003",
     ageName: "Pahan",
     ageAddress: "Mathara",
@@ -107,7 +107,7 @@ export let Agents = [
   },
 
   {
-    ageId: "Age003",
+    ageId: "S003",
     admId: "Adm002",
     ageName: "Rohan",
     ageAddress: "Gampaha",
@@ -116,7 +116,7 @@ export let Agents = [
   },
 
   {
-    ageId: "Age004",
+    ageId: "S004",
     admId: "Adm001",
     ageName: "Nihal",
     ageAddress: "Colombo",
@@ -125,7 +125,7 @@ export let Agents = [
   },
 
   {
-    ageId: "Age005",
+    ageId: "S005",
     admId: "Adm002",
     ageName: "Saman",
     ageAddress: "Anuradapura",

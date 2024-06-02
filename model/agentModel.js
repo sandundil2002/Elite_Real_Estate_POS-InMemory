@@ -25,21 +25,21 @@ export function deleteAgent(index) {
 }
 
 export function validateAgent(agent) {
-  const ageIdPattern = /^A\d{3}$/;
+  const ageIdPattern = /^S\d{3}$/;
   const adminIdPattern = /^[A-Za-z0-9-]+$/;
   const namePattern = /^[A-Za-z\s]+$/;
   const addressPattern = /^[A-Za-z0-9\s,.'-]+$/;
   const mobilePattern = /^\d{9}$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const isAgeIdValid = ageIdPattern.test(agent.ageId);
+  const isAgentIdValid = ageIdPattern.test(agent.ageId);
   const isAdminIdValid = adminIdPattern.test(agent.admId);
   const isNameValid = namePattern.test(agent.ageName);
   const isAddressValid = addressPattern.test(agent.ageAddress);
   const isMobileValid = mobilePattern.test(agent.ageMobile);
   const isEmailValid = emailPattern.test(agent.ageEmail);
 
-  if (!isAgeIdValid) {
+  if (!isAgentIdValid) {
     alert("Invalid Agent ID");
     return false;
   }
