@@ -3,6 +3,7 @@ import {
   getAllAppointments,
   addCustomer,
   updateCustomer,
+  deleteCustomer,
 } from "../model/customerModel.js";
 
 let foreignKeyInterval;
@@ -140,27 +141,44 @@ $("#cus-update").click(function () {
   }
 });
 
- $("#cus-search").click(function () {
-   const cusId = $("#cus-id").val();
+$("#cus-search").click(function () {
+  const cusId = $("#cus-id").val();
 
-   const index = getAllCustomers().findIndex(
-     (customer) => customer.cusId === cusId
-   );
+  const index = getAllCustomers().findIndex(
+    (customer) => customer.cusId === cusId
+  );
 
-   if (index !== -1) {
-     const customer = getAllCustomers()[index];
-     console.log(customer);
-     $("#cus-app-id").val(customer.appId.trim());
-     $("#cus-name").val(customer.cusName.trim());
-     $("#cus-address").val(customer.address.trim());
-     $("#cus-mobile").val(customer.cusMobile.trim());
-     $("#cus-email").val(customer.cusEmail.trim());
-     stopForeignKeyLoad();
-     setTimeout(startForeignKeyLoad, 20000);
-   } else {
-     alert("Customer Not Found");
-   }
- });
+  if (index !== -1) {
+    const customer = getAllCustomers()[index];
+    console.log(customer);
+    $("#cus-app-id").val(customer.appId.trim());
+    $("#cus-name").val(customer.cusName.trim());
+    $("#cus-address").val(customer.address.trim());
+    $("#cus-mobile").val(customer.cusMobile.trim());
+    $("#cus-email").val(customer.cusEmail.trim());
+    stopForeignKeyLoad();
+    setTimeout(startForeignKeyLoad, 20000);
+  } else {
+    alert("Customer Not Found");
+  }
+});
+
+$("#cus-delete").click(function () {
+  const cusId = $("#cus-id").val();
+
+  const index = getAllCustomers().findIndex(
+    (customer) => customer.cusId === cusId
+  );
+
+  if (index !== -1) {
+    deleteCustomer(index);
+    const tbody = $("#cus-tbl");
+    tbody.empty();
+    loadAllCustomers(getAllCustomers());
+  } else {
+    alert("Customer Not Found");
+  }
+});
 
 function startForeignKeyLoad() {
   foreignKeyInterval = setInterval(loadAppointmentIDs, 1000);

@@ -23,3 +23,7 @@ export function addCustomer(cusId,appId,cusName,cusAddress,cusMobile,cusEmail) {
 export function updateCustomer(index, updatedCustomer) {
   Customers[index] = updatedCustomer;
 }
+
+export function deleteCustomer(index) {
+  Customers.splice(index, 1);
+}
