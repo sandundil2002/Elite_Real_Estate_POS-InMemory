@@ -4,6 +4,7 @@ import {
   addCustomer,
   updateCustomer,
   deleteCustomer,
+  validateCustomer
 } from "../model/customerModel.js";
 
 let foreignKeyInterval;
@@ -115,8 +116,11 @@ $("#cus-add").click(function () {
   const [cusId, appId, cusName, cusAddress, cusMobile, cusEmail] =
     customerArray;
 
-  addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
-  reloadTable(customerArray);
+  if (checkValidation()) {
+      addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
+      reloadTable(customerArray);
+      setCustomerID()
+  }
 });
 
 $("#cus-update").click(function () {
@@ -136,8 +140,10 @@ $("#cus-update").click(function () {
       email: $("#cus-email").val(),
     };
 
-    updateCustomer(index, updatedCustomer);
-    updateTable(index, updatedCustomer);
+    if (checkValidation()) {
+       updateCustomer(index, updatedCustomer);
+       updateTable(index, updatedCustomer);
+    }
   }
 });
 
@@ -179,6 +185,19 @@ $("#cus-delete").click(function () {
     alert("Customer Not Found");
   }
 });
+
+function checkValidation() {
+  const customer = {
+    cusId: $("#cus-id").val(),
+    appId: $("#cus-app-id").val(),
+    cusName: $("#cus-name").val(),
+    cusAddress: $("#cus-address").val(),
+    cusMobile: $("#cus-mobile").val(),
+    cusEmail: $("#cus-email").val(),
+  };
+
+  return validateCustomer(customer);
+}
 
 function startForeignKeyLoad() {
   foreignKeyInterval = setInterval(loadAppointmentIDs, 1000);
