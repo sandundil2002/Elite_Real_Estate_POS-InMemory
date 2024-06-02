@@ -43,46 +43,46 @@ export let Appointments = [
 export let Customers = [
   {
     cusId: "C001",
-    AppId: "A001",
+    appId: "A001",
     cusName: "Amal",
     address: "Galle",
     cusMobile: "775369891",
-    email: "amal@gmail.com",
+    cusEmail: "amal@gmail.com",
   },
 
   {
     cusId: "C002",
-    AppId: "A002",
+    appId: "A002",
     cusName: "Kamal",
     address: "Mathara",
     cusMobile: "759842061	",
-    email: "kamal@gmail.com",
+    cusEmail: "kamal@gmail.com",
   },
 
   {
     cusId: "C003",
-    AppId: "A003",
+    appId: "A003",
     cusName: "Nimal",
     address: "Panadura",
     cusMobile: "716525698	",
-    email: "nimal@gmail.com",
+    cusEmail: "nimal@gmail.com",
   },
 
   {
     cusId: "C004",
-    AppId: "A004",
+    appId: "A004",
     cusName: "Sunil",
     address: "Kandy",
     cusMobile: "789512065	",
-    email: "sunil@gmail.com",
+    cusEmail: "sunil@gmail.com",
   },
 
   {
     cusId: "C005",
-    AppId: "A005",
+    appId: "A005",
     cusName: "Vimal",
     address: "Mathale",
     cusMobile: "746528046		",
-    email: "vimal@gmail.com",
+    cusEmail: "vimal@gmail.com",
   },
 ];

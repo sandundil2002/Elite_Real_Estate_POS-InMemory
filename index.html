@@ -268,7 +268,7 @@
         </div><br>
 
         <div id="input-fields">
-            <select name="Appointment ID" id="appointment-id" class="combo-box">
+            <select name="Appointment ID" id="cus-app-id" class="combo-box">
                 <option value="">Appointment ID</option>
             </select>
 
@@ -681,11 +681,8 @@
 <script type="module" src="/controller/customerController.js"></script>
 
 <script>
-    $("#app-id").ready(function () {
+    $(document).ready(function () {
         $("#app-id").val("A006");
-    });
-
-    $("#cus-id").ready(function () {
         $("#cus-id").val("C006");
     });
 </script>
