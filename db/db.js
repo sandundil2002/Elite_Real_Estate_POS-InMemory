@@ -133,3 +133,50 @@ export let Agents = [
     ageEmail: "saman@gmail.com",
   },
 ];
+
+export let Properties = [
+  {
+    proId: "P001",
+    ageId: "S001",
+    type: "Land",
+    proAddress: "Galle",
+    price: "10000",
+    perches: "10",
+  },
+
+  {
+    proId: "P002",
+    ageId: "S002",
+    type: "Building",
+    proAddress: "Colombo",
+    price: "50000",
+    perches: "20",
+  },
+
+  {
+    proId: "P003",
+    ageId: "S003",
+    type: "House",
+    proAddress: "Kandy",
+    price: "30000",
+    perches: "12",
+  },
+
+  {
+    proId: "P004",
+    ageId: "S004",
+    type: "Office",
+    proAddress: "Kaluthara",
+    price: "20000",
+    perches: "15",
+  },
+
+  {
+    proId: "P005",
+    ageId: "S005",
+    type: "Farm",
+    proAddress: "Anuradapura",
+    price: "5000",
+    perches: "25",
+  },
+];

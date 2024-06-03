@@ -1,0 +1,1 @@
+import { Properties } from "../db/db.js";
