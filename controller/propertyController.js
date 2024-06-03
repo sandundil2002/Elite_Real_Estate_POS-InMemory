@@ -66,6 +66,74 @@ function loadAllProperties(properties) {
   });
 }
 
+function reloadTable(propertyArray) {
+  $("#pro-tbl").append(
+    "<tr>" +
+      "<td>" +
+      propertyArray[0] +
+      "</td>" +
+      "<td>" +
+      propertyArray[1] +
+      "</td>" +
+      "<td>" +
+      propertyArray[2] +
+      "</td>" +
+      "<td>" +
+      propertyArray[3] +
+      "</td>" +
+      "<td>" +
+      propertyArray[4] +
+      "</td>" +
+      "<td>" +
+      propertyArray[5] +
+      "</td>" +
+      "</tr>"
+  );
+}
+
+function updateTable(index, updatedProperty) {
+  const tableBody = $("#pro-tbl");
+  const row = tableBody.find("tr").eq(index);
+
+  row.find("td").eq(0).text(updatedProperty.proId);
+  row.find("td").eq(1).text(updatedProperty.ageId);
+  row.find("td").eq(2).text(updatedProperty.type);
+  row.find("td").eq(3).text(updatedProperty.proAddress);
+  row.find("td").eq(4).text(updatedProperty.price);
+  row.find("td").eq(5).text(updatedProperty.perches);
+}
+
+$("#pro-add").click(function () {
+  const propertyArray = [
+    $("#pro-id").val(),
+    $("#pro-age-id").val(),
+    $("#property-type").val(),
+    $("#pro-address").val(),
+    $("#price").val(),
+    $("#perches").val(),
+  ];
+
+  const [proId, ageId, type, proAddress, price, perches] = propertyArray;
+
+  if (checkValidation()) {
+    addProperty(proId, ageId, type, proAddress, price, perches);
+    reloadTable(propertyArray);
+    setPropertyID();
+  }
+});
+
+function checkValidation() {
+  const property = {
+    proId: $("#pro-id").val(),
+    ageId: $("#pro-age-id").val(),
+    proAddress: $("#pro-name").val(),
+    price: $("#price").val(),
+    perches: $("#perches").val()
+  };
+
+  return validateProperty(property);
+}
+
 function startForeignKeyLoad() {
   foreignKeyInterval = setInterval(loadAgentsIDs, 1000);
 }

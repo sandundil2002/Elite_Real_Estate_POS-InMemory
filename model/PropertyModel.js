@@ -32,8 +32,8 @@ export function validateProperty(property) {
   const proIdPattern = /^P\d{3}$/;
   const ageIdPattern = /^S\d{3}$/;
   const addressPattern = /^[A-Za-z0-9\s,.'-]+$/;
-  const pricePattern = /^\d{9}$/;
-  const perchesPattern = /^\d{9}$/;
+  const pricePattern = /^\d{5}$/;
+  const perchesPattern = /^\d{2}$/;
 
   const isProIdValid = proIdPattern.test(property.proId);
   const isAgeIdValid = ageIdPattern.test(property.ageId);
@@ -47,7 +47,7 @@ export function validateProperty(property) {
   }
 
   if (!isAgeIdValid) {
-    alert("Invalid Agent ID");
+    alert("Invalid Supplier ID");
     return false;
   }
 
