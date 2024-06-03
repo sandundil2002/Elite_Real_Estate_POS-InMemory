@@ -356,10 +356,7 @@
         </div><br>
 
         <div id="input-fields">
-            <select name="Agent ID" id="agent-id" class="combo-box">
-                <option value="">Agent ID</option>
-                <option value="">Agent 01</option>
-                <option value="">Agent 02</option>
+            <select name="Agent ID" id="pro-age-id" class="combo-box">
             </select>
 
             <select name="Property type" id="property-type" class="combo-box">
@@ -374,16 +371,16 @@
                 <option value="">Cabin</option>
             </select>
 
-            <input type="text" class="combo-box" placeholder="Address">
-            <input type="text" class="combo-box" placeholder="Price">
-            <input type="number" class="combo-box" placeholder="Perches">
+            <input type="text" id="proAddress" class="combo-box" placeholder="Address">
+            <input type="text" id="price" class="combo-box" placeholder="Price">
+            <input type="number" id="perches" class="combo-box" placeholder="Perches">
         </div> <br>
 
         <div id="crud-btn-container">
-            <button class="crud-btn">Add</button>
-            <button class="crud-btn">update</button>
-            <button class="crud-btn">Search</button>
-            <button class="crud-btn">Delete</button>
+            <button id="pro-add" class="crud-btn">Add</button>
+            <button id="pro-update" class="crud-btn">update</button>
+            <button id="pro-search" class="crud-btn">Search</button>
+            <button id="pro-delete" class="crud-btn">Delete</button>
         </div><br>
 
         <table id="table-manage">
