@@ -146,6 +146,28 @@ $("#pro-update").click(function () {
   }
 });
 
+$("#pro-search").click(function () {
+  const proId = $("#pro-id").val();
+
+  const index = getAllProperties().findIndex(
+    (property) => property.proId === proId
+  );
+
+  if (index !== -1) {
+    const property = getAllProperties()[index];
+    $("#pro-age-id").val(property.ageId.trim());
+    $("#property-type").val(property.type.trim());
+    console.log(property.type.trim());
+    $("#pro-address").val(property.proAddress.trim());
+    $("#price").val(property.price.trim());
+    $("#perches").val(property.perches.trim());
+    stopForeignKeyLoad();
+    setTimeout(startForeignKeyLoad, 20000);
+  } else {
+    alert("Property Not Found");
+  }
+});
+
 function checkValidation() {
   const property = {
     proId: $("#pro-id").val(),
