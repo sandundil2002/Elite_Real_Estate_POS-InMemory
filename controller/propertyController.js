@@ -122,6 +122,30 @@ $("#pro-add").click(function () {
   }
 });
 
+$("#pro-update").click(function () {
+  const proId = $("#pro-id").val();
+
+  const index = getAllProperties().findIndex(
+    (property) => property.proId === proId
+  );
+
+  if (index !== -1) {
+    const updatedProperty = {
+      proId: proId,
+      ageId: $("#pro-age-id").val(),
+      type: $("#property-type").val(),
+      proAddress: $("pro-address").val(),
+      price: $("#price").val(),
+      perches: $("#perches").val(),
+    };
+
+    if (checkValidation()) {
+      updateProperty(index, updatedProperty);
+      updateTable(index, updatedProperty);
+    }
+  }
+});
+
 function checkValidation() {
   const property = {
     proId: $("#pro-id").val(),
