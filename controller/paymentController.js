@@ -10,7 +10,7 @@ let cusForeignKeyInterval;
 $(document).ready(function () {
   setLocalDateTime();
   setPaymentID();
-  startForeignKeyLoad()
+  startForeignKeyLoad();
   setTimeout(setLocalDateTime(), 60000);
 
   $("#pay-pro-id").on("change", function () {
@@ -58,26 +58,40 @@ function setPaymentID() {
 function loadPropertyIDs() {
   const properties = getAllProperties();
   const selectElement = $("#pay-pro-id");
+  const priceInputElement = $("#pay-pro-price");
 
   selectElement.empty();
   selectElement.append('<option value="">Property ID</option>');
 
   properties.forEach((property) => {
-    const option = `<option value="${property.proId}">${property.proId}</option>`;
+    const option = `<option value="${property.proId}" data-price="${property.price}">${property.proId}</option>`;
     selectElement.append(option);
+  });
+
+  selectElement.change(function () {
+    const selectedOption = $(this).find("option:selected");
+    const propertyPrice = selectedOption.data("price");
+    priceInputElement.val(propertyPrice);
   });
 }
 
 function loadCustomerIDs() {
   const customers = getAllCustomers();
   const selectElement = $("#pay-cus-id");
+  const cusInputElement = $("#pay-cus-name");
 
   selectElement.empty();
   selectElement.append('<option value="">Customer ID</option>');
 
   customers.forEach((customer) => {
-    const option = `<option value="${customer.cusId}">${customer.cusId}</option>`;
+    const option = `<option value="${customer.cusId}" data-name="${customer.cusName}"> ${customer.cusId}</option>`;
     selectElement.append(option);
+  });
+
+  selectElement.change(function () {
+    const selectedOption = $(this).find("option:selected");
+    const customerName = selectedOption.data("name");
+    cusInputElement.val(customerName);
   });
 }
 
