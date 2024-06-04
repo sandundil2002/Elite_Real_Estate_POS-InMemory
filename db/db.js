@@ -180,3 +180,7 @@ export let Properties = [
     perches: "25",
   },
 ];
+
+export let Payments = [{
+  
+}]

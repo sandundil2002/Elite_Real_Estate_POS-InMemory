@@ -6,6 +6,10 @@ import {
   validateAppointment,
 } from "../model/appointmentModel.js";
 
+$(document).ready(function () {
+  loadAllAppointments(getAllAppointments())
+});
+
 function generateAppointmentID() {
   let lastID = $("#app-id").val();
 
@@ -74,51 +78,46 @@ function reloadTable(appointmentArray) {
   );
 }
 
-$(document).ready(function () {
-  $("#appo-add").click(function () {
-    const appointmentArray = [
-      $("#app-id").val(),
-      $("#app-admin-id").val(),
-      $("#app-cus-name").val(),
-      $("#app-cus-mobile").val(),
-      $("#app-date-time").val(),
-    ];
+$("#appo-add").click(function () {
+  const appointmentArray = [
+    $("#app-id").val(),
+    $("#app-admin-id").val(),
+    $("#app-cus-name").val(),
+    $("#app-cus-mobile").val(),
+    $("#app-date-time").val(),
+  ];
 
-    const [appId, adminId, name, mobile, dateTime] = appointmentArray;
-    if (checkValidation()) {
-      addAppointment(appId, adminId, name, mobile, dateTime);
-      reloadTable(appointmentArray);
-      setAppointmentID();
-    }
-  });
-  loadAllAppointments(getAllAppointments());
+  const [appId, adminId, name, mobile, dateTime] = appointmentArray;
+  if (checkValidation()) {
+    addAppointment(appId, adminId, name, mobile, dateTime);
+    reloadTable(appointmentArray);
+    setAppointmentID();
+  }
 });
 
-$(document).ready(function () {
-  $("#appo-update").click(function () {
-    const appId = $("#app-id").val();
+$("#appo-update").click(function () {
+  const appId = $("#app-id").val();
 
-    const index = getAllAppointments().findIndex(
-      (appointment) => appointment.appId === appId
-    );
+  const index = getAllAppointments().findIndex(
+    (appointment) => appointment.appId === appId
+  );
 
-    if (index !== -1) {
-      const updatedAppointment = {
-        appId: appId,
-        adminId: $("#app-admin-id").val(),
-        name: $("#app-cus-name").val(),
-        mobile: $("#app-cus-mobile").val(),
-        dateTime: $("#app-date-time").val(),
-      };
+  if (index !== -1) {
+    const updatedAppointment = {
+      appId: appId,
+      adminId: $("#app-admin-id").val(),
+      name: $("#app-cus-name").val(),
+      mobile: $("#app-cus-mobile").val(),
+      dateTime: $("#app-date-time").val(),
+    };
 
-      if (checkValidation()) {
-        updateAppointment(index, updatedAppointment);
-        updateTable(index, updatedAppointment);
-      }
-    } else {
-      alert("Appointment not found");
+    if (checkValidation()) {
+      updateAppointment(index, updatedAppointment);
+      updateTable(index, updatedAppointment);
     }
-  });
+  } else {
+    alert("Appointment not found");
+  }
 });
 
 function updateTable(index, updatedAppointment) {
@@ -132,43 +131,39 @@ function updateTable(index, updatedAppointment) {
   row.find("td").eq(4).text(updatedAppointment.dateTime);
 }
 
-$(document).ready(function () {
-  $("#appo-search").click(function () {
-    const appId = $("#app-id").val();
+$("#appo-search").click(function () {
+  const appId = $("#app-id").val();
 
-    const index = getAllAppointments().findIndex(
-      (appointment) => appointment.appId === appId
-    );
+  const index = getAllAppointments().findIndex(
+    (appointment) => appointment.appId === appId
+  );
 
-    if (index !== -1) {
-      const appointment = getAllAppointments()[index];
-      $("#app-admin-id").val(appointment.adminId);
-      $("#app-cus-name").val(appointment.name);
-      $("#app-cus-mobile").val(appointment.mobile);
-      $("#app-date-time").val(appointment.dateTime);
-    } else {
-      alert("Appointment Not Found");
-    }
-  });
+  if (index !== -1) {
+    const appointment = getAllAppointments()[index];
+    $("#app-admin-id").val(appointment.adminId);
+    $("#app-cus-name").val(appointment.name);
+    $("#app-cus-mobile").val(appointment.mobile);
+    $("#app-date-time").val(appointment.dateTime);
+  } else {
+    alert("Appointment Not Found");
+  }
 });
 
-$(document).ready(function () {
-  $("#appo-delete").click(function () {
-    const appId = $("#app-id").val();
+$("#appo-delete").click(function () {
+  const appId = $("#app-id").val();
 
-    const index = getAllAppointments().findIndex(
-      (appointment) => appointment.appId === appId
-    );
+  const index = getAllAppointments().findIndex(
+    (appointment) => appointment.appId === appId
+  );
 
-    if (index !== -1) {
-      deleteAppointment(index);
-      const tbody = $("#app-tbl");
-      tbody.empty();
-      loadAllAppointments(getAllAppointments());
-    } else {
-      alert("Appointment Not Found");
-    }
-  });
+  if (index !== -1) {
+    deleteAppointment(index);
+    const tbody = $("#app-tbl");
+    tbody.empty();
+    loadAllAppointments(getAllAppointments());
+  } else {
+    alert("Appointment Not Found");
+  }
 });
 
 function checkValidation() {

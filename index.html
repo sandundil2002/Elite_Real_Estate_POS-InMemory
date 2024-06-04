@@ -407,28 +407,24 @@
 
         <div id="payment-container">
             <div class="payment-fields-container">
-                <input type="text" class="combo-box" placeholder="Payment ID">
-                <input type="datetime-local" class="combo-box">
+                <input type="text" id="pay-id" class="combo-box" readonly placeholder="Payment ID">
+                <input type="datetime-local" id="pay-date" readonly class="combo-box">
 
-                <select name="Property ID" id="property-id" class="combo-box">
-                    <option value="">Property ID</option>
-                    <option value="">P001</option>
-                    <option value="">P002</option>
+                <select name="Property ID" id="pay-pro-id" class="combo-box">
                 </select>
-                <input type="text" class="combo-box" placeholder="Property price">
 
-                <select name="Customer ID" id="customer-id" class="combo-box">
-                    <option value="">Customer ID</option>
-                    <option value="">C001</option>
-                    <option value="">C002</option>
+                <input type="text" id="pay-pro-price" class="combo-box" readonly placeholder="Property price">
+
+                <select name="Customer ID" id="pay-cus-id" class="combo-box">
                 </select>
-                <input type="text" class="combo-box" placeholder="Customer Name">
+
+                <input type="text" id="pay-cus-name" class="combo-box" readonly placeholder="Customer Name">
 
                 <select name="Payment Method" id="payment-method" class="combo-box">
                     <option value="">Payment Method</option>
-                    <option value="">Card</option>
-                    <option value="">Cash</option>
-                    <option value="">Cheque</option>
+                    <option value="Card">Card</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Cheque">Cheque</option>
                 </select><br>
 
                 <button class="pay-btn">Pay</button>
@@ -500,6 +496,7 @@
 <script type="module" src="/controller/customerController.js"></script>
 <script type="module" src="/controller/agentController.js"></script>
 <script type="module" src="/controller/propertyController.js"></script>
+<script type="module" src="/controller/paymentController.js"></script>
 
 <script>
     $(document).ready(function () {
