@@ -1,7 +1,27 @@
+import {
+  getAllPayments,
+  getAllProperties,
+  getAllCustomers,
+} from "../model/paymentModel.js";
+
+let proForeignKeyInterval;
+let cusForeignKeyInterval;
+
 $(document).ready(function () {
   setLocalDateTime();
   setPaymentID();
+  startForeignKeyLoad()
   setTimeout(setLocalDateTime(), 60000);
+
+  $("#pay-pro-id").on("change", function () {
+    stopForeignKeyLoad();
+    setTimeout(startForeignKeyLoad, 20000);
+  });
+
+  $("#pay-cus-id").on("change", function () {
+    stopForeignKeyLoad();
+    setTimeout(startForeignKeyLoad, 20000);
+  });
 });
 
 function setLocalDateTime() {
@@ -36,14 +56,37 @@ function setPaymentID() {
 }
 
 function loadPropertyIDs() {
-  const properties = getAllAppointments();
-  const selectElement = $("#cus-app-id");
+  const properties = getAllProperties();
+  const selectElement = $("#pay-pro-id");
 
   selectElement.empty();
-  selectElement.append('<option value="">Appointment ID</option>');
+  selectElement.append('<option value="">Property ID</option>');
 
-  appointments.forEach((appointment) => {
-    const option = `<option value="${appointment.appId}">${appointment.appId}</option>`;
+  properties.forEach((property) => {
+    const option = `<option value="${property.proId}">${property.proId}</option>`;
     selectElement.append(option);
   });
+}
+
+function loadCustomerIDs() {
+  const customers = getAllCustomers();
+  const selectElement = $("#pay-cus-id");
+
+  selectElement.empty();
+  selectElement.append('<option value="">Customer ID</option>');
+
+  customers.forEach((customer) => {
+    const option = `<option value="${customer.cusId}">${customer.cusId}</option>`;
+    selectElement.append(option);
+  });
+}
+
+function startForeignKeyLoad() {
+  proForeignKeyInterval = setInterval(loadPropertyIDs, 1000);
+  cusForeignKeyInterval = setInterval(loadCustomerIDs, 1000);
+}
+
+function stopForeignKeyLoad() {
+  clearInterval(proForeignKeyInterval);
+  clearInterval(cusForeignKeyInterval);
 }
