@@ -64,7 +64,7 @@ function loadPropertyIDs() {
   selectElement.append('<option value="">Property ID</option>');
 
   properties.forEach((property) => {
-    const option = `<option value="${property.proId}" data-price="${property.price}">${property.proId}</option>`;
+    const option = `<option value="${property.proId}" data-price="${property.price}" data-perches="${property.perches}" data-address="${property.address}"> ${property.proId}</option>`;
     selectElement.append(option);
   });
 
@@ -111,4 +111,26 @@ $("#clear-btn").click(function () {
   $("#pay-cus-id").val("");
   $("#pay-cus-name").val("");
   $("#payment-method").val("");
+});
+
+$("#pay-btn").click(function () {
+  const cusName = $("#pay-cus-name").val();
+  const payId = $("#pay-id").val();
+  const payMethod = $("#payment-method").val();
+  const date = $("#bill-pay-date").val();
+  const time = $("#bill-pay-time").val();
+
+  const selectedOption = $("#pay-pro-id").find("option:selected");
+  const propertyType = selectedOption.data("type");
+  const propertyPerches = selectedOption.data("perches");
+  const propertyAddress = selectedOption.data("address");
+
+  $("#bill-cus-name").html("Customer Name - " + cusName);
+  $("#bill-pro-type").html("Property Type - " + propertyType);
+  $("#bill-pro-perches").html("Property Perches - " + propertyPerches);
+  $("#bill-pro-address").html("Property Address - " + propertyAddress);
+  $("#bill-pay-id").html("Purches Id - " + payId);
+  $("#bill-pay-method").html("Payment Method - " + payMethod);
+  $("#bill-pay-date").html("Date - " + date);
+  $("#bill-pay-time").html("Time - " + time);
 });

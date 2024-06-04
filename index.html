@@ -18,11 +18,12 @@
     <nav class="navbar">
         <div id="logo">ELITE REAL ESTATE</div>
         <ul class="nav-links">
-            <li><a class="nav-keys" href="#">Home</a></li>
-            <li><a class="nav-keys" href="#">Appointment</a></li>
-            <li><a class="nav-keys" href="#">Property</a></li>
-            <li><a class="nav-keys" href="#">Customers</a></li>
-            <li><a class="nav-keys" href="#">Contact</a></li>
+            <li><a class="nav-keys" id="home-nav">Home</a></li>
+            <li><a class="nav-keys" id="appointment-nav">Appointment</a></li>
+            <li><a class="nav-keys" id="customer-nav" >Customer</a></li>
+            <li><a class="nav-keys" id="agent-nav">Supplier</a></li>
+            <li><a class="nav-keys" id="property-nav">Property</a></li>
+            <li><a class="nav-keys" id="payment-nav">Payment</a></li>
         </ul>
 
         <div class="hamburger">
@@ -207,9 +208,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <div id="break-line">Page 01</div>
+        <div id="break-line">Page 01</div>
+    </section><br><br>
 
     <section id="appointment-section">
         <div id="appointment-frame">
@@ -256,10 +256,9 @@
             <tbody id="app-tbl">
             </tbody>
 
-        </table>
-    </section><br>
-
-    <div id="break-line">Page 02</div>
+        </table><br>
+        <div id="break-line">Page 02</div>
+    </section>
 
     <section id="customer-section">
         <div id="section-topbar">
@@ -298,10 +297,9 @@
 
             <tbody id="cus-tbl">
             </tbody>
-        </table>
-    </section><br>
-
-    <div id="break-line">Page 03</div>
+        </table><br>
+        <div id="break-line">Page 03</div>
+    </section>
 
     <section id="agent-section">
         <div id="section-topbar">
@@ -344,10 +342,9 @@
 
             <tbody id="age-tbl">
             </tbody>
-        </table>
-    </section><br>
-
-    <div id="break-line">Page 04</div>
+        </table><br>
+        <div id="break-line">Page 04</div>
+    </section>
 
     <section id="property-section">
         <div id="section-topbar">
@@ -397,10 +394,9 @@
 
             <tbody id="pro-tbl">
             </tbody>
-        </table>
-    </section><br>
-
-    <div id="break-line">Page 05</div>
+        </table><br>
+        <div id="break-line">Page 05</div>
+    </section>
 
     <section id="payment-section">
         <h1 class="section-title">SELL PROPERTIES OF ELITE</h1><br>
@@ -445,17 +441,17 @@
 
                 <div id="bill-to-container">
                     <div id="left-side">
-                        <h5>Customer Name - </h5>
-                        <h5>Property Type - </h5>
-                        <h5>Property Perches - </h5>
-                        <h5>Property Address - </h5>
+                        <h5 id="bill-cus-name">Customer Name - </h5>
+                        <h5 id="bill-pro-type">Property Type - </h5>
+                        <h5 id="bill-pro-pearch">Property Perches - </h5>
+                        <h5 id="bill-pro-address">Property Address - </h5>
                     </div>
 
                     <div id="right-side">
-                        <h5>Purches Order # - </h5>
-                        <h5>Payment Method - </h5>
-                        <h5>Date -</h5>
-                        <h5>Time -</h5>
+                        <h5 id="bill-pay-id">Purches Id # - </h5>
+                        <h5 id="bill-pay-method">Payment Method - </h5>
+                        <h5 id="bill-pay-date">Date -</h5>
+                        <h5 id="bill-pay-time">Time -</h5>
                     </div>
                 </div><br>
 
@@ -468,26 +464,25 @@
 
                         <tr>
                             <td>Price</td>
-                            <td></td>
+                            <td id="bill-tbl-price"></td>
                         </tr>
 
                         <tr>
                             <td>Tax(5%)</td>
-                            <td></td>
+                            <td id="bill-tbl-tax"></td>
                         </tr>
 
                         <tr>
                             <td>Total</td>
-                            <td></td>
+                            <td id="bill-tbl-total"></td>
                         </tr>
                     </table>
                 </div>
                 <div class="bill-footer"><span>Thank You Come Again</span></div>
             </div>
-        </div>
+        </div> <br>
+        <div id="break-line">Page 06</div>
     </section><br>
-
-    <div id="break-line">Page 06</div>
 </body>
 
 <script src="/controller/dashboardController.js"></script>
@@ -504,7 +499,41 @@
         $("#cus-id").val("C006");
         $("#age-id").val("S006");
         $("#pro-id").val("P006");
+         $('section').hide();
+        $("#dashboard-section").show()
     });
+
+    $(".nav-keys").click(function (event) {
+        event.preventDefault();
+        $('section').hide();
+
+        const clickedId = $(this).attr("id");
+
+        switch (clickedId) {
+            case "home-nav":
+                $("#dashboard-section").show();
+                break;
+            case "appointment-nav":
+                $("#appointment-section").show();
+                break;
+            case "customer-nav":
+                $("#customer-section").show();
+                break;
+            case "agent-nav":
+                $("#agent-section").show();
+                break;
+            case "property-nav":
+                $("#property-section").show();
+                break;
+            case "payment-nav":
+                $("#payment-section").show();
+                break;
+            default:
+                $("#dashboard-section").show()
+                break;
+        }
+    });
+
 </script>
 
 </html>
