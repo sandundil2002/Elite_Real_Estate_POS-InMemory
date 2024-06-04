@@ -104,3 +104,11 @@ function stopForeignKeyLoad() {
   clearInterval(proForeignKeyInterval);
   clearInterval(cusForeignKeyInterval);
 }
+
+$("#clear-btn").click(function () {
+  $("#pay-pro-id").val("");
+  $("#pay-pro-price").val("");
+  $("#pay-cus-id").val("");
+  $("#pay-cus-name").val("");
+  $("#payment-method").val("");
+});
