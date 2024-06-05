@@ -139,7 +139,7 @@ html {
 
 .bar {
     background-color: #e08a8a;
-    position: static;
+    position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: center;

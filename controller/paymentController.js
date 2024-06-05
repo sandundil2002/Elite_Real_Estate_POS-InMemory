@@ -64,7 +64,7 @@ function loadPropertyIDs() {
   selectElement.append('<option value="">Property ID</option>');
 
   properties.forEach((property) => {
-    const option = `<option value="${property.proId}" data-price="${property.price}" data-perches="${property.perches}" data-address="${property.address}"> ${property.proId}</option>`;
+    const option = `<option value="${property.proId}" data-price="${property.price}" data-type="${property.type}" data-perches="${property.perches}" data-address="${property.proAddress}">${property.proId}</option>`;
     selectElement.append(option);
   });
 
@@ -72,6 +72,32 @@ function loadPropertyIDs() {
     const selectedOption = $(this).find("option:selected");
     const propertyPrice = selectedOption.data("price");
     priceInputElement.val(propertyPrice);
+  });
+
+  $("#pay-btn").click(function () {
+    const selectedOption = $("#pay-pro-id option:selected");
+    const propertyPrice = selectedOption.data("price");
+    const propertyType = selectedOption.data("type");
+    const propertyPerches = selectedOption.data("perches");
+    const propertyAddress = selectedOption.data("address");
+
+    const cusName = $("#pay-cus-name").val();
+    const payId = $("#pay-id").val();
+    const payMethod = $("#payment-method").val();
+
+    const currentDate = new Date();
+    const date = currentDate.toLocaleDateString();
+    const time = currentDate.toLocaleTimeString();
+
+    priceInputElement.val(propertyPrice);
+    $("#bill-cus-name").html("Customer Name - " + cusName);
+    $("#bill-pro-type").html("Property Type - " + propertyType);
+    $("#bill-pro-perches").html("Property Perches - " + propertyPerches);
+    $("#bill-pro-address").html("Property Address - " + propertyAddress);
+    $("#bill-pay-id").html("Purchase ID - " + payId);
+    $("#bill-pay-method").html("Payment Method - " + payMethod);
+    $("#bill-pay-date").html("Date - " + date);
+    $("#bill-pay-time").html("Time - " + time);
   });
 }
 
@@ -111,26 +137,4 @@ $("#clear-btn").click(function () {
   $("#pay-cus-id").val("");
   $("#pay-cus-name").val("");
   $("#payment-method").val("");
-});
-
-$("#pay-btn").click(function () {
-  const cusName = $("#pay-cus-name").val();
-  const payId = $("#pay-id").val();
-  const payMethod = $("#payment-method").val();
-  const date = $("#bill-pay-date").val();
-  const time = $("#bill-pay-time").val();
-
-  const selectedOption = $("#pay-pro-id").find("option:selected");
-  const propertyType = selectedOption.data("type");
-  const propertyPerches = selectedOption.data("perches");
-  const propertyAddress = selectedOption.data("address");
-
-  $("#bill-cus-name").html("Customer Name - " + cusName);
-  $("#bill-pro-type").html("Property Type - " + propertyType);
-  $("#bill-pro-perches").html("Property Perches - " + propertyPerches);
-  $("#bill-pro-address").html("Property Address - " + propertyAddress);
-  $("#bill-pay-id").html("Purches Id - " + payId);
-  $("#bill-pay-method").html("Payment Method - " + payMethod);
-  $("#bill-pay-date").html("Date - " + date);
-  $("#bill-pay-time").html("Time - " + time);
 });
