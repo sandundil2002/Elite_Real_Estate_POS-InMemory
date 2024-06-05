@@ -9,7 +9,6 @@ let cusForeignKeyInterval;
 
 $(document).ready(function () {
   setLocalDateTime();
-  setPaymentID();
   startForeignKeyLoad();
   setTimeout(setLocalDateTime(), 60000);
 
@@ -39,13 +38,18 @@ function setLocalDateTime() {
 }
 
 function generatePaymentID() {
-  let lastID = $("#pay-id").val();
+  let lastID = localStorage.getItem("lastPayID");
 
   if (!lastID) {
     lastID = "O000";
   }
 
-  let newID = "O" + (parseInt(lastID.slice(1)) + 1).toString().padStart(3, "0");
+  let numericPart = parseInt(lastID.slice(1));
+  if (isNaN(numericPart)) {
+    numericPart = 0;
+  }
+
+  let newID = "O" + (numericPart + 1).toString().padStart(3, "0");
   localStorage.setItem("lastPayID", newID);
   return newID;
 }
@@ -74,7 +78,8 @@ function loadPropertyIDs() {
     priceInputElement.val(propertyPrice);
   });
 
-  $("#pay-btn").click(function () {
+  $("#pay-btn").click(function (event) {
+    event.preventDefault();
     const selectedOption = $("#pay-pro-id option:selected");
     const propertyPrice = selectedOption.data("price");
     const propertyType = selectedOption.data("type");
@@ -89,6 +94,17 @@ function loadPropertyIDs() {
     const date = currentDate.toLocaleDateString();
     const time = currentDate.toLocaleTimeString();
 
+    if (cusName.trim() === "") {
+      alert("Please fill in customer field.");
+      return;
+    } else if (payId.trim() === "") {
+      alert("Please fill in property field.");
+      return;
+    } else if (payMethod.trim() === "") {
+      alert("Please fill in payment method.");
+      return;
+    }
+
     priceInputElement.val(propertyPrice);
     $("#bill-cus-name").html("Customer Name - " + cusName);
     $("#bill-pro-type").html("Property Type - " + propertyType);
@@ -98,6 +114,15 @@ function loadPropertyIDs() {
     $("#bill-pay-method").html("Payment Method - " + payMethod);
     $("#bill-pay-date").html("Date - " + date);
     $("#bill-pay-time").html("Time - " + time);
+
+    const tax = propertyPrice * 0.05;
+    const total = propertyPrice + tax;
+
+    $("#bill-tbl-price").html("LKR : " + propertyPrice);
+    $("#bill-tbl-tax").html("LKR : " + tax);
+    $("#bill-tbl-total").html("LKR : " + total);
+
+    setPaymentID();
   });
 }
 
