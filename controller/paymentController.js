@@ -38,25 +38,20 @@ function setLocalDateTime() {
 }
 
 function generatePaymentID() {
-  let lastID = localStorage.getItem("lastPayID");
-
-  if (!lastID) {
-    lastID = "O000";
-  }
-
+  let lastID = $("#pay-id").val();
   let numericPart = parseInt(lastID.slice(1));
-  if (isNaN(numericPart)) {
-    numericPart = 0;
-  }
-
   let newID = "O" + (numericPart + 1).toString().padStart(3, "0");
-  localStorage.setItem("lastPayID", newID);
   return newID;
 }
 
 function setPaymentID() {
-  const newID = generatePaymentID();
-  $("#pay-id").val(newID);
+  const bug = 1;
+  if (bug === 1) {
+    const newID = generatePaymentID();
+    $("#pay-id").val(newID);
+    bug = 0;
+    return;
+  }
 }
 
 function loadPropertyIDs() {
