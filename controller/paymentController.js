@@ -1,10 +1,11 @@
 import {
   getAllProperties,
   getAllCustomers,
+  getAllApointments,
   addPayment,
   updatePropertyStatus,
-  getAllApointments,
-  getAllPayments,
+  updateAppointmentStatus,
+  findAppointmentIdByCustomerName,
 } from "../model/paymentModel.js";
 
 let proForeignKeyInterval;
@@ -135,6 +136,11 @@ function loadPropertyIDs() {
 
     updatePropertyStatus(proId, "Not Available");
     reloadPropertyTable(getAllProperties());
+    updateAppointmentStatus(
+      findAppointmentIdByCustomerName(cusName),
+      "Completed"
+    );
+    reloadAppointmentsTable(getAllApointments());
     setPaymentID();
   });
 }
@@ -152,6 +158,35 @@ function reloadPropertyTable(properties) {
       <td>${properties.perches}</td>
       <td>${properties.status}</td>
     </tr>`;
+    tbody.append(row);
+  });
+}
+
+function reloadAppointmentsTable(appointments) {
+  const tbody = $("#app-tbl");
+  tbody.empty();
+
+  appointments.forEach((appointment) => {
+    const row = `<tr>
+          <td>${appointment.appId}</td>
+          <td>${appointment.adminId}</td>
+          <td>${appointment.name}</td>
+          <td>${appointment.mobile}</td>
+          <td>${appointment.dateTime}</td>
+          <td>
+            <select class="status-combo" data-id="${appointment.appId}">
+              <option value="Pending" class="pending" ${
+                appointment.status === "Pending" ? "selected" : ""
+              }>Pending</option>
+              <option value="Complete" class="complete"${
+                appointment.status === "Confirmed" ? "selected" : ""
+              }>Confirmed</option>
+              <option value="Cancel" class="cancel"${
+                appointment.status === "Completed" ? "selected" : ""
+              }>Completed</option>
+            </select>
+          </td>
+        </tr>`;
     tbody.append(row);
   });
 }

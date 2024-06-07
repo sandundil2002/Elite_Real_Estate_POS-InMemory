@@ -7,7 +7,7 @@ import {
 } from "../model/appointmentModel.js";
 
 $(document).ready(function () {
-  loadAllAppointments(getAllAppointments())
+  loadAllAppointments(getAllAppointments());
 });
 
 function generateAppointmentID() {

@@ -1,7 +1,7 @@
-import {Payments,Properties,Customers,Appointments }from "../db/db.js"
+import { Payments, Properties, Customers, Appointments } from "../db/db.js";
 
-export function getAllPayments(){
-    return Payments;
+export function getAllPayments() {
+  return Payments;
 }
 
 export function addPayment(payment) {
@@ -9,20 +9,28 @@ export function addPayment(payment) {
 }
 
 export function getAllProperties() {
-    return Properties;
+  return Properties;
 }
 
 export function getAllCustomers() {
-    return Customers;
+  return Customers;
 }
 
 export function getAllApointments() {
-    return Appointments;
+  return Appointments;
 }
 
 export function updatePropertyStatus(proId, status) {
   const property = Properties.find((prop) => prop.proId === proId);
-  if (property) {
-    property.status = status;
-  }
+  property.status = status;
+}
+
+export function updateAppointmentStatus(appId, status) {
+  const appointment = Appointments.find((appo) => appo.appId === appId);
+  appointment.status = status;
+}
+
+export function findAppointmentIdByCustomerName(customerName) {
+  const appointment = Appointments.find((appo) => appo.name === customerName);
+  return appointment.appId;
 }
