@@ -61,6 +61,7 @@ function loadAllProperties(properties) {
       <td>${properties.proAddress}</td>
       <td>${properties.price}</td>
       <td>${properties.perches}</td>
+      <td>${properties.status}</td>
     </tr>`;
     tbody.append(row);
   });
@@ -87,6 +88,9 @@ function reloadTable(propertyArray) {
       "<td>" +
       propertyArray[5] +
       "</td>" +
+      "<td>" +
+      propertyArray[6] +
+      "</td>" +
       "</tr>"
   );
 }
@@ -101,22 +105,30 @@ function updateTable(index, updatedProperty) {
   row.find("td").eq(3).text(updatedProperty.proAddress);
   row.find("td").eq(4).text(updatedProperty.price);
   row.find("td").eq(5).text(updatedProperty.perches);
+  row.find("td").eq(6).text(updatedProperty.status);
 }
 
 $("#pro-add").click(function () {
+  const proId = $("#pro-id").val();
+  const ageId = $("#pro-age-id").val();
+  const type = $("#property-type").val();
+  const proAddress = $("#pro-address").val();
+  const price = $("#price").val();
+  const perches = $("#perches").val();
+  const status = "Available";
+
   const propertyArray = [
-    $("#pro-id").val(),
-    $("#pro-age-id").val(),
-    $("#property-type").val(),
-    $("#pro-address").val(),
-    $("#price").val(),
-    $("#perches").val(),
+    proId,
+    ageId,
+    type,
+    proAddress,
+    price,
+    perches,
+    status,
   ];
 
-  const [proId, ageId, type, proAddress, price, perches] = propertyArray;
-
   if (checkValidation()) {
-    addProperty(proId, ageId, type, proAddress, price, perches);
+    addProperty(proId, ageId, type, proAddress, price, perches, status);
     reloadTable(propertyArray);
     setPropertyID();
   }
@@ -137,6 +149,7 @@ $("#pro-update").click(function () {
       proAddress: $("pro-address").val(),
       price: $("#price").val(),
       perches: $("#perches").val(),
+      status: "Available",
     };
 
     if (checkValidation()) {

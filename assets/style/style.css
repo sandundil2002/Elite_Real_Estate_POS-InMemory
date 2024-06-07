@@ -304,6 +304,16 @@ tbody tr:nth-child(even) {
     font-style: italic;
 }
 
+#pro-table-thead tr {
+    background-color: #ddabab;
+}
+
+#pro-table-thead th {
+    color: black;
+    width: 14.2%;
+    font-style: italic;
+}
+
 #crud-btn-container {
     width: 100%;
     display: flex;
@@ -482,6 +492,6 @@ tbody tr:nth-child(even) {
     cursor: pointer;
 }
 
-.pay-btn:hover{
+.pay-btn:hover {
     background-color: #218838;
 }

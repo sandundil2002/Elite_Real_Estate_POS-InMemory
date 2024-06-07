@@ -142,6 +142,7 @@ export let Properties = [
     proAddress: "Galle",
     price: "10000",
     perches: "10",
+    status: "Available",
   },
 
   {
@@ -151,6 +152,7 @@ export let Properties = [
     proAddress: "Colombo",
     price: "50000",
     perches: "20",
+    status: "Available",
   },
 
   {
@@ -160,6 +162,7 @@ export let Properties = [
     proAddress: "Kandy",
     price: "30000",
     perches: "12",
+    status: "Available",
   },
 
   {
@@ -169,6 +172,7 @@ export let Properties = [
     proAddress: "Kaluthara",
     price: "20000",
     perches: "15",
+    status: "Available",
   },
 
   {
@@ -178,9 +182,8 @@ export let Properties = [
     proAddress: "Anuradapura",
     price: "5000",
     perches: "25",
+    status: "Available",
   },
 ];
 
-export let Payments = [{
-  
-}]
+export let Payments = [{}];

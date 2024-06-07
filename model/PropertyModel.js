@@ -8,7 +8,7 @@ export function getAllAgents() {
     return Agents;
 }
 
-export function addProperty(proId,ageId,type,proAddress,price,perches) {
+export function addProperty(proId,ageId,type,proAddress,price,perches,status) {
   const newProperty = {
     proId: proId,
     ageId: ageId,
@@ -16,6 +16,7 @@ export function addProperty(proId,ageId,type,proAddress,price,perches) {
     proAddress: proAddress,
     price: price,
     perches: perches,
+    status: status,
   };
   Properties.push(newProperty);
 }
