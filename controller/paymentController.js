@@ -1,7 +1,10 @@
 import {
-  getAllPayments,
   getAllProperties,
   getAllCustomers,
+  addPayment,
+  updatePropertyStatus,
+  getAllApointments,
+  getAllPayments,
 } from "../model/paymentModel.js";
 
 let proForeignKeyInterval;
@@ -80,6 +83,7 @@ function loadPropertyIDs() {
     const propertyType = selectedOption.data("type");
     const propertyPerches = selectedOption.data("perches");
     const propertyAddress = selectedOption.data("address");
+    const proId = selectedOption.val();
 
     const cusName = $("#pay-cus-name").val();
     const payId = $("#pay-id").val();
@@ -117,7 +121,38 @@ function loadPropertyIDs() {
     $("#bill-tbl-tax").html("LKR : " + tax);
     $("#bill-tbl-total").html("LKR : " + total);
 
+    const payment = {
+      payId: payId,
+      cusName: cusName,
+      proId: proId,
+      payMethod: payMethod,
+      date: date,
+      time: time,
+      total: total,
+    };
+
+    addPayment(payment);
+
+    updatePropertyStatus(proId, "Not Available");
+    reloadPropertyTable(getAllProperties());
     setPaymentID();
+  });
+}
+
+function reloadPropertyTable(properties) {
+  const tbody = $("#pro-tbl");
+  tbody.empty();
+  properties.forEach((properties) => {
+    const row = `<tr>
+      <td>${properties.proId}</td>
+      <td>${properties.ageId}</td>
+      <td>${properties.type}</td>
+      <td>${properties.proAddress}</td>
+      <td>${properties.price}</td>
+      <td>${properties.perches}</td>
+      <td>${properties.status}</td>
+    </tr>`;
+    tbody.append(row);
   });
 }
 
