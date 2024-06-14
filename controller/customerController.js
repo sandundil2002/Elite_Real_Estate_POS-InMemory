@@ -4,7 +4,7 @@ import {
   addCustomer,
   updateCustomer,
   deleteCustomer,
-  validateCustomer
+  validateCustomer,
 } from "../model/customerModel.js";
 
 let foreignKeyInterval;
@@ -117,9 +117,10 @@ $("#cus-add").click(function () {
     customerArray;
 
   if (checkValidation()) {
-      addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
-      reloadTable(customerArray);
-      setCustomerID()
+    addCustomer(cusId, appId, cusName, cusAddress, cusMobile, cusEmail);
+    reloadTable(customerArray);
+    setCustomerID();
+    swal("Confirmation!", "New Customer Added Successful!", "success");
   }
 });
 
@@ -141,9 +142,24 @@ $("#cus-update").click(function () {
     };
 
     if (checkValidation()) {
-       updateCustomer(index, updatedCustomer);
-       updateTable(index, updatedCustomer);
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to update this customer details!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willUpdate) => {
+        if (willUpdate) {
+          updateCustomer(index, updatedCustomer);
+          updateTable(index, updatedCustomer);
+          swal("Confirmation! Your customer details has been updated!", {
+            icon: "success",
+          });
+        }
+      });
     }
+  } else {
+    swal("Information!", "Customer Not Found!", "info");
   }
 });
 
@@ -164,7 +180,7 @@ $("#cus-search").click(function () {
     stopForeignKeyLoad();
     setTimeout(startForeignKeyLoad, 20000);
   } else {
-    alert("Customer Not Found");
+    swal("Information!", "Customer Not Found!", "info");
   }
 });
 
@@ -176,12 +192,25 @@ $("#cus-delete").click(function () {
   );
 
   if (index !== -1) {
-    deleteCustomer(index);
-    const tbody = $("#cus-tbl");
-    tbody.empty();
-    loadAllCustomers(getAllCustomers());
+    swal({
+      title: "Are you sure?",
+      text: "Do you want to delete this customer!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteCustomer(index);
+        const tbody = $("#cus-tbl");
+        tbody.empty();
+        loadAllCustomers(getAllCustomers());
+        swal("Confirmation! Your customer has been deleted!", {
+          icon: "success",
+        });
+      }
+    });
   } else {
-    alert("Customer Not Found");
+    swal("Information!", "Customer Not Found!", "info");
   }
 });
 

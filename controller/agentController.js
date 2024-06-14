@@ -96,15 +96,14 @@ $("#age-add").click(function () {
     addAgent(ageId, admId, ageName, ageAddress, ageMobile, ageEmail);
     reloadTable(agentArray);
     setAgentID();
+    swal("Confirmation!", "New Supplier Added Successful!", "success");
   }
 });
 
 $("#age-update").click(function () {
   const ageId = $("#age-id").val();
 
-  const index = getAllAgents().findIndex(
-    (agent) => agent.ageId === ageId
-  );
+  const index = getAllAgents().findIndex((agent) => agent.ageId === ageId);
 
   if (index !== -1) {
     const updatedAgent = {
@@ -117,8 +116,23 @@ $("#age-update").click(function () {
     };
 
     if (checkValidation()) {
-      updateAgent(index, updatedAgent);
-      updateTable(index, updatedAgent);
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to update this supplier details!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willUpdate) => {
+        if (willUpdate) {
+          updateAgent(index, updatedAgent);
+          updateTable(index, updatedAgent);
+          swal("Confirmation! Your supplier details has been updated!", {
+            icon: "success",
+          });
+        }
+      });
+    } else {
+      swal("Information!", "Supplier Not Found!", "info");
     }
   }
 });
@@ -126,9 +140,7 @@ $("#age-update").click(function () {
 $("#age-search").click(function () {
   const ageId = $("#age-id").val();
 
-  const index = getAllAgents().findIndex(
-    (agent) => agent.ageId === ageId
-  );
+  const index = getAllAgents().findIndex((agent) => agent.ageId === ageId);
 
   if (index !== -1) {
     const agent = getAllAgents()[index];
@@ -138,23 +150,35 @@ $("#age-search").click(function () {
     $("#age-mobile").val(agent.ageMobile.trim());
     $("#age-email").val(agent.ageEmail.trim());
   } else {
-    alert("Agent Not Found");
+    swal("Information!", "Supplier Not Found!", "info");
   }
 });
 
 $("#age-delete").click(function () {
   const ageId = $("#age-id").val();
 
-  const index = getAllAgents().findIndex((
-    agent) => agent.ageId === ageId);
+  const index = getAllAgents().findIndex((agent) => agent.ageId === ageId);
 
   if (index !== -1) {
-    deleteAgent(index);
-    const tbody = $("#age-tbl");
-    tbody.empty();
-    loadAllAgents(getAllAgents());
+    swal({
+      title: "Are you sure?",
+      text: "Do you want to delete this supplier!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteAgent(index);
+        const tbody = $("#age-tbl");
+        tbody.empty();
+        loadAllAgents(getAllAgents());
+        swal("Confirmation! Your supplier has been deleted!", {
+          icon: "success",
+        });
+      }
+    });
   } else {
-    alert("Agent Not Found");
+    swal("Information!", "Supplier Not Found!", "info");
   }
 });
 

@@ -92,6 +92,7 @@ $("#appo-add").click(function () {
     addAppointment(appId, adminId, name, mobile, dateTime);
     reloadTable(appointmentArray);
     setAppointmentID();
+    swal("Confirmation!", "New Appointment Added Successful!", "success");
   }
 });
 
@@ -112,11 +113,24 @@ $("#appo-update").click(function () {
     };
 
     if (checkValidation()) {
-      updateAppointment(index, updatedAppointment);
-      updateTable(index, updatedAppointment);
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to update this appointment details!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willUpdate) => {
+        if (willUpdate) {
+          updateAppointment(index, updatedAppointment);
+          updateTable(index, updatedAppointment);
+          swal("Confirmation! Your appointment details has been updated!", {
+            icon: "success",
+          });
+        }
+      });
     }
   } else {
-    alert("Appointment not found");
+    swal("Information!", "Appointment Not Found!", "info");
   }
 });
 
@@ -145,7 +159,7 @@ $("#appo-search").click(function () {
     $("#app-cus-mobile").val(appointment.mobile);
     $("#app-date-time").val(appointment.dateTime);
   } else {
-    alert("Appointment Not Found");
+    swal("Information!", "Appointment Not Found!", "info");
   }
 });
 
@@ -157,12 +171,25 @@ $("#appo-delete").click(function () {
   );
 
   if (index !== -1) {
-    deleteAppointment(index);
-    const tbody = $("#app-tbl");
-    tbody.empty();
-    loadAllAppointments(getAllAppointments());
+    swal({
+      title: "Are you sure?",
+      text: "Do you want to delete this appointment!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteAppointment(index);
+        const tbody = $("#app-tbl");
+        tbody.empty();
+        loadAllAppointments(getAllAppointments());
+        swal("Confirmation! Your appointment has been deleted!", {
+          icon: "success",
+        });
+      }
+    });
   } else {
-    alert("Appointment Not Found");
+    swal("Information!", "Appointment Not Found!", "info");
   }
 });
 

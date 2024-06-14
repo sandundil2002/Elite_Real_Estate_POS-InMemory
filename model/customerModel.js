@@ -8,15 +8,22 @@ export function getAllCustomers() {
   return Customers;
 }
 
-export function addCustomer(cusId,appId,cusName,cusAddress,cusMobile,cusEmail) {
+export function addCustomer(
+  cusId,
+  appId,
+  cusName,
+  cusAddress,
+  cusMobile,
+  cusEmail
+) {
   const newCustomer = {
     cusId: cusId,
-    appId:appId,
-    cusName:cusName,
+    appId: appId,
+    cusName: cusName,
     cusAddress: cusAddress,
-    cusMobile:cusMobile,
-    cusEmail: cusEmail
-};
+    cusMobile: cusMobile,
+    cusEmail: cusEmail,
+  };
   Customers.push(newCustomer);
 }
 
@@ -37,41 +44,70 @@ export function validateCustomer(customer) {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const isCusIdValid = cusIdPattern.test(customer.cusId);
-  const isAppIdValid = appIdPattern.test(customer.appId)
+  const isAppIdValid = appIdPattern.test(customer.appId);
   const isCusNameValid = cusNamePattern.test(customer.cusName);
   const isAddressValid = addressPattern.test(customer.address);
   const isCusMobileValid = cusMobilePattern.test(customer.cusMobile);
   const isEmailValid = emailPattern.test(customer.cusEmail);
 
   if (!isCusIdValid) {
-    alert("Invalid Customer ID");
+    swal({
+      title: "Warning!",
+      text: "Invalid Customer ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAppIdValid) {
-    alert("Invalid Appointment ID");
+    swal({
+      title: "Warning!",
+      text: "Please Input Valid Appointment ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isCusNameValid) {
-    alert("Invalid Name");
+    swal({
+      title: "Warning!",
+      text: "Invalid Customer Name!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAddressValid) {
-    alert("Invalid Address");
+    swal({
+      title: "Warning!",
+      text: "Invalid Customer Address!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isCusMobileValid) {
-    alert("Invalid Mobile Number");
+    swal({
+      title: "Warning!",
+      text: "Invalid Mobile Number!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isEmailValid) {
-    alert("Invalid Email");
+    swal({
+      title: "Warning!",
+      text: "Invalid Email Address!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
-
   return true;
 }

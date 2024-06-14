@@ -37,29 +37,53 @@ export function validateAppointment(appointment) {
   const isDateTime = dateTimePatten.test(appointment.dateTime);
 
   if (!isAppIdValid) {
-    alert("Invalid Appointment ID");
+    swal({
+      title: "Warning!",
+      text: "Invalid Appointment ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAdminIdValid) {
-    alert("Invalid Admin ID!");
+    swal({
+      title: "Warning!",
+      text: "Please Input Admin ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isNameValid) {
-    alert("Invalid Name");
+    swal({
+      title: "Warning!",
+      text: "Invalid Customer Name!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isMobileValid) {
-    alert("Invalid Mobile Number");
+    swal({
+      title: "Warning!",
+      text: "Invalid Mobile Number!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isDateTime) {
-    alert("Please Input Date & Time");
+    swal({
+      title: "Warning!",
+      text: "Please Input Date & Time!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
-
   return true;
 }

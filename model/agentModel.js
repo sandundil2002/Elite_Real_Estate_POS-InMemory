@@ -1,10 +1,17 @@
 import { Agents } from "../db/db.js";
 
 export function getAllAgents() {
-    return Agents;
+  return Agents;
 }
 
-export function addAgent(ageId, admId, ageName, ageAddress, ageMobile, ageEmail) {
+export function addAgent(
+  ageId,
+  admId,
+  ageName,
+  ageAddress,
+  ageMobile,
+  ageEmail
+) {
   const newAgent = {
     ageId: ageId,
     admId: admId,
@@ -40,34 +47,63 @@ export function validateAgent(agent) {
   const isEmailValid = emailPattern.test(agent.ageEmail);
 
   if (!isAgentIdValid) {
-    alert("Invalid Agent ID");
+    swal({
+      title: "Warning!",
+      text: "Invalid Agent ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAdminIdValid) {
-    alert("Invalid Admin ID!");
+    swal({
+      title: "Warning!",
+      text: "Please Input Admin ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isNameValid) {
-    alert("Invalid Name");
+    swal({
+      title: "Warning!",
+      text: "Invalid Supplier Name!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAddressValid) {
-    alert("Invalid Address");
+    swal({
+      title: "Warning!",
+      text: "Invalid Address!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isMobileValid) {
-    alert("Invalid Mobile Number");
+    swal({
+      title: "Warning!",
+      text: "Invalid Mobile Number!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isEmailValid) {
-    alert("Please Input Valid Email");
+    swal({
+      title: "Warning!",
+      text: "Invalid Email Address!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
-
   return true;
 }

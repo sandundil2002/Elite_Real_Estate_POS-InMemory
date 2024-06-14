@@ -1,14 +1,22 @@
-import { Properties,Agents } from "../db/db.js";
+import { Properties, Agents } from "../db/db.js";
 
 export function getAllProperties() {
-    return Properties;
+  return Properties;
 }
 
 export function getAllAgents() {
-    return Agents;
+  return Agents;
 }
 
-export function addProperty(proId,ageId,type,proAddress,price,perches,status) {
+export function addProperty(
+  proId,
+  ageId,
+  type,
+  proAddress,
+  price,
+  perches,
+  status
+) {
   const newProperty = {
     proId: proId,
     ageId: ageId,
@@ -32,38 +40,75 @@ export function deleteProperty(index) {
 export function validateProperty(property) {
   const proIdPattern = /^P\d{3}$/;
   const ageIdPattern = /^S\d{3}$/;
+  const proType = /^[A-Za-z\s,.'-]+$/;
   const addressPattern = /^[A-Za-z0-9\s,.'-]+$/;
   const pricePattern = /^\d{5}$/;
   const perchesPattern = /^\d{2}$/;
 
   const isProIdValid = proIdPattern.test(property.proId);
   const isAgeIdValid = ageIdPattern.test(property.ageId);
+  const isProTypeValid = proType.test(property.proType);
   const isAddressValid = addressPattern.test(property.proAddress);
   const isPriceValid = pricePattern.test(property.price);
   const isPerchValid = perchesPattern.test(property.perches);
 
   if (!isProIdValid) {
-    alert("Invalid Property ID");
+    swal({
+      title: "Warning!",
+      text: "Invalid Property ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAgeIdValid) {
-    alert("Invalid Supplier ID");
+    swal({
+      title: "Warning!",
+      text: "Please Input Valid Supplier ID!",
+      icon: "error",
+      button: "Try Again!",
+    });
+    return false;
+  }
+
+  if (!isProTypeValid) {
+    swal({
+      title: "Warning!",
+      text: "Please Input Valid Property Type!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isAddressValid) {
-    alert("Invalid Address");
+    swal({
+      title: "Warning!",
+      text: "Please Input Valid Property Address!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isPriceValid) {
-    alert("Invalid Price");
+    swal({
+      title: "Warning!",
+      text: "Please Input Valid Property Price!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 
   if (!isPerchValid) {
-    alert("Invalid Perches");
+    swal({
+      title: "Warning!",
+      text: "Please Input Valid Property Perches!",
+      icon: "error",
+      button: "Try Again!",
+    });
     return false;
   }
 

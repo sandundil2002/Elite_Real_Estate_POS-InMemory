@@ -86,6 +86,7 @@ function loadPropertyIDs() {
     const propertyAddress = selectedOption.data("address");
     const proId = selectedOption.val();
 
+    const proPrice = $("#pay-pro-price").val();
     const cusName = $("#pay-cus-name").val();
     const payId = $("#pay-id").val();
     const payMethod = $("#payment-method").val();
@@ -94,54 +95,70 @@ function loadPropertyIDs() {
     const date = currentDate.toLocaleDateString();
     const time = currentDate.toLocaleTimeString();
 
-    if (cusName.trim() === "") {
-      alert("Please fill in customer field.");
+    if (proPrice.trim() === "") {
+      swal("Information!", "Please fill the property field!", "warning");
+      return;
+    } else if (cusName.trim() === "") {
+      swal("Information!", "Please fill the customer field!", "warning");
       return;
     } else if (payId.trim() === "") {
-      alert("Please fill in property field.");
+      swal("Information!", "Invalid Payment ID!", "warning");
       return;
     } else if (payMethod.trim() === "") {
-      alert("Please fill in payment method.");
+      swal("Information!", "Please fill the payment method!", "warning");
       return;
+    } else {
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to sell this property!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willTrue) => {
+        if (willTrue) {
+          swal("Confirmation! Property sell succesfull!", {
+            icon: "success",
+          });
+          priceInputElement.val(propertyPrice);
+          $("#bill-cus-name").html("Customer Name - " + cusName);
+          $("#bill-pro-type").html("Property Type - " + propertyType);
+          $("#bill-pro-perches").html("Property Perches - " + propertyPerches);
+          $("#bill-pro-address").html("Property Address - " + propertyAddress);
+          $("#bill-pay-id").html("Purchase ID - " + payId);
+          $("#bill-pay-method").html("Payment Method - " + payMethod);
+          $("#bill-pay-date").html("Date - " + date);
+          $("#bill-pay-time").html("Time - " + time);
+
+          const tax = propertyPrice * 0.05;
+          const total = propertyPrice + tax;
+
+          $("#bill-tbl-price").html("LKR : " + propertyPrice);
+          $("#bill-tbl-tax").html("LKR : " + tax);
+          $("#bill-tbl-total").html("LKR : " + total);
+
+          const payment = {
+            payId: payId,
+            cusName: cusName,
+            proId: proId,
+            payMethod: payMethod,
+            date: date,
+            time: time,
+            total: total,
+          };
+
+          addPayment(payment);
+
+          updatePropertyStatus(proId, "Not Available");
+          reloadPropertyTable(getAllProperties());
+          updateAppointmentStatus(
+            findAppointmentIdByCustomerName(cusName),
+            "Completed"
+          );
+          reloadAppointmentsTable(getAllApointments());
+          setPaymentID();
+        }
+      });
     }
-
-    priceInputElement.val(propertyPrice);
-    $("#bill-cus-name").html("Customer Name - " + cusName);
-    $("#bill-pro-type").html("Property Type - " + propertyType);
-    $("#bill-pro-perches").html("Property Perches - " + propertyPerches);
-    $("#bill-pro-address").html("Property Address - " + propertyAddress);
-    $("#bill-pay-id").html("Purchase ID - " + payId);
-    $("#bill-pay-method").html("Payment Method - " + payMethod);
-    $("#bill-pay-date").html("Date - " + date);
-    $("#bill-pay-time").html("Time - " + time);
-
-    const tax = propertyPrice * 0.05;
-    const total = propertyPrice + tax;
-
-    $("#bill-tbl-price").html("LKR : " + propertyPrice);
-    $("#bill-tbl-tax").html("LKR : " + tax);
-    $("#bill-tbl-total").html("LKR : " + total);
-
-    const payment = {
-      payId: payId,
-      cusName: cusName,
-      proId: proId,
-      payMethod: payMethod,
-      date: date,
-      time: time,
-      total: total,
-    };
-
-    addPayment(payment);
-
-    updatePropertyStatus(proId, "Not Available");
-    reloadPropertyTable(getAllProperties());
-    updateAppointmentStatus(
-      findAppointmentIdByCustomerName(cusName),
-      "Completed"
-    );
-    reloadAppointmentsTable(getAllApointments());
-    setPaymentID();
   });
 }
 
@@ -222,9 +239,22 @@ function stopForeignKeyLoad() {
 }
 
 $("#clear-btn").click(function () {
-  $("#pay-pro-id").val("");
-  $("#pay-pro-price").val("");
-  $("#pay-cus-id").val("");
-  $("#pay-cus-name").val("");
-  $("#payment-method").val("");
+  swal({
+    title: "Are you sure?",
+    text: "Do you want to clear the input fields?",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willClear) => {
+    if (willClear) {
+      $("#pay-pro-id").val("");
+      $("#pay-pro-price").val("");
+      $("#pay-cus-id").val("");
+      $("#pay-cus-name").val("");
+      $("#payment-method").val("");
+      swal("Confirmation!", "You cleared the input fields!", "success", {
+        icon: "success",
+      });
+    }
+  });
 });

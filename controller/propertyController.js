@@ -131,6 +131,7 @@ $("#pro-add").click(function () {
     addProperty(proId, ageId, type, proAddress, price, perches, status);
     reloadTable(propertyArray);
     setPropertyID();
+    swal("Confirmation!", "New Property Added Successful!", "success");
   }
 });
 
@@ -153,9 +154,24 @@ $("#pro-update").click(function () {
     };
 
     if (checkValidation()) {
-      updateProperty(index, updatedProperty);
-      updateTable(index, updatedProperty);
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to update this property details!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willUpdate) => {
+        if (willUpdate) {
+          updateProperty(index, updatedProperty);
+          updateTable(index, updatedProperty);
+          swal("Confirmation! Your property details has been updated!", {
+            icon: "success",
+          });
+        }
+      });
     }
+  } else {
+    swal("Information!", "Property Not Found!", "info");
   }
 });
 
@@ -176,7 +192,7 @@ $("#pro-search").click(function () {
     stopForeignKeyLoad();
     setTimeout(startForeignKeyLoad, 20000);
   } else {
-    alert("Property Not Found");
+    swal("Information!", "Property Not Found!", "info");
   }
 });
 
@@ -188,12 +204,25 @@ $("#pro-delete").click(function () {
   );
 
   if (index !== -1) {
-    deleteProperty(index);
-    const tbody = $("#pro-tbl");
-    tbody.empty();
-    loadAllProperties(getAllProperties());
+    swal({
+      title: "Are you sure?",
+      text: "Do you want to delete this property!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteProperty(index);
+        const tbody = $("#pro-tbl");
+        tbody.empty();
+        loadAllProperties(getAllProperties());
+        swal("Confirmation! Your property has been deleted!", {
+          icon: "success",
+        });
+      }
+    });
   } else {
-    alert("Property Not Found");
+    swal("Information!", "Property Not Found!", "info");
   }
 });
 
@@ -201,7 +230,8 @@ function checkValidation() {
   const property = {
     proId: $("#pro-id").val(),
     ageId: $("#pro-age-id").val(),
-    proAddress: $("#pro-name").val(),
+    proType: $("#property-type").val(),
+    proAddress: $("#pro-address").val(),
     price: $("#price").val(),
     perches: $("#perches").val(),
   };
