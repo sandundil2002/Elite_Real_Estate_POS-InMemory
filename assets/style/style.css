@@ -88,6 +88,7 @@ html {
     border: 1px solid black;
     background-color: #ddabab;
     height: auto;
+    margin-left: -2%;
 }
 
 .icon-button {
@@ -105,11 +106,6 @@ html {
     color: white;
     border: none;
     padding-left: 25px;
-}
-
-#bar-chart-container {
-    width: 100%;
-    height: 100%;
 }
 
 #datetime-container {
@@ -160,11 +156,6 @@ html {
     font-style: italic;
 }
 
-#appointment-container {
-    width: 100%;
-    height: 100%;
-}
-
 #appointment-lbl {
     display: flex;
     gap: 1%;
@@ -202,7 +193,6 @@ td {
     color: black;
     width: 25%;
     font-style: italic;
-
 }
 
 tbody tr:nth-child(odd) {
@@ -213,16 +203,9 @@ tbody tr:nth-child(even) {
     background-color: #cdd6df;
 }
 
-#dashboard-section {
-    display: block;
-}
-
-#break-line {
+#dashboard-body{
     width: 100%;
-    height: 25px;
-    background-color: #333;
-    color: white;
-    text-align: center;
+    padding-left: 1%;
 }
 
 /*-----------------------------Appointment Section-----------------------------*/

@@ -1135,13 +1135,18 @@
         margin-left: -1.75%;
     }
 
+    #dashboard-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
     #bar-chart-container {
+        width: 50%;
         margin-top: 1%;
     }
 
     #datetime-container {
         width: 100%;
-        height: auto;
     }
 
     #time-lbl {
@@ -1176,12 +1181,12 @@
     }
 
     #appointment-container {
-        margin-top: 4.5%;
+        width: 50%;
+        margin-top: 7%;
     }
 
     .top-lables {
         width: 49%;
-        height: auto;
         font-size: 18px;
     }
 
@@ -1335,9 +1340,9 @@
         margin-left: -1.25%;
     }
 
-    #datetime-container {
-        width: 100%;
-        height: auto;
+    #dashboard-body {
+        display: flex;
+        justify-content: space-between;
     }
 
     #time-lbl {
@@ -1349,16 +1354,18 @@
         font-style: italic;
     }
 
+    #bar-chart-container {
+        width: 50%;
+    }
+
     #welcome-admin {
         width: 100%;
-        height: auto;
         text-align: center;
         font-size: 45px;
     }
 
     .bar-chart {
-        width: auto;
-        height: 445px;
+        height: 452px;
         margin: auto;
         padding: 20px;
     }
@@ -1372,7 +1379,8 @@
     }
 
     #appointment-container {
-        margin-top: 4.5%;
+        width: 50%;
+        margin-top: 6%;
     }
 
     .top-lables {
