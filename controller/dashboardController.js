@@ -21,3 +21,21 @@ $(document).ready(function () {
     $(this).addClass("active");
   });
 });
+
+$(".icon-button").click(function (event) {
+  event.preventDefault();
+  $("#dashboard-body").hide();
+
+  const clickedbtn = $(this).attr("id");
+
+  switch (clickedbtn) {
+    case "dash-btn":
+      $("#dashboard-body").show();
+      break;
+    case "dash-app-btn":
+      $("#appointment-section").show();
+      break;
+    default:
+      break;
+  }
+})
