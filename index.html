@@ -43,7 +43,7 @@
             <div class="sidebar">
                 <header>Elite Real Estate</header>
                 <ul>
-                    <li><a class="side-button" href=""> <i class="fa-solid fa-house"></i> Dashboard </a></li>
+                    <li><a class="side-button"> <i class="fa-solid fa-house"></i> Dashboard </a></li>
                     <li><a class="side-button" href=""> <i class="fa-solid fa-calendar-check"></i> Appointment </a>
                     </li>
                     <li><a class="side-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </a></li>
@@ -60,17 +60,25 @@
             <div id="dashboard-controller">
                 <img src="/assets/images/logo-removebg-preview.jpg" alt="">
 
-                <button class="icon-button" href=""> <i class="fa-solid fa-house"></i> Dashboard </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-calendar-check"></i> Appointment
+                <button class="icon-button" id="dash-btn" onclick="setActive(this)"> <i class="fa-solid fa-house"></i>
+                    Dashboard </button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-calendar-check"></i>
+                    Appointment
                 </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-user-tie"></i> Customers </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-landmark"></i> Property</button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-users"></i> Employee </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-money-check-dollar"></i> Payment
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-user-tie"></i> Customers
                 </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-tent"></i> Rental </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-user-group"></i></i> Agents </button>
-                <button class="icon-button" href=""> <i class="fa-solid fa-power-off"></i> Log Out </button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-landmark"></i>
+                    Property</button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-users"></i> Employee
+                </button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-money-check-dollar"></i>
+                    Payment
+                </button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-tent"></i> Rental </button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-user-group"></i></i> Agents
+                </button>
+                <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-power-off"></i> Log Out
+                </button>
             </div>
 
             <section id="dashboard-body">

@@ -12,3 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   getTime(timer);
   setInterval(() => getTime(timer), 1000);
 });
+
+$(document).ready(function () {
+  $("#dash-btn").addClass("active");
+
+  $(".icon-button").click(function () {
+    $(".icon-button").removeClass("active");
+    $(this).addClass("active");
+  });
+});

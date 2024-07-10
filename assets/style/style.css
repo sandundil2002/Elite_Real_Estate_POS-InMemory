@@ -31,7 +31,7 @@ html {
     width: 100%;
 }
 
-.nav-keys:hover{
+.nav-keys:hover {
     cursor: pointer;
 }
 
@@ -106,6 +106,11 @@ html {
     color: white;
     border: none;
     padding-left: 25px;
+}
+
+.icon-button.active {
+    background-color: #333;
+    color: white;
 }
 
 #datetime-container {
@@ -203,7 +208,7 @@ tbody tr:nth-child(even) {
     background-color: #cdd6df;
 }
 
-#dashboard-body{
+#dashboard-body {
     width: 100%;
     padding-left: 1%;
 }
