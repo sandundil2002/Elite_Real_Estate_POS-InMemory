@@ -62,7 +62,8 @@
 
                 <button class="icon-button" id="dash-btn" onclick="setActive(this)"> <i class="fa-solid fa-house"></i>
                     Dashboard </button>
-                <button class="icon-button" id="dash-app-btn" onclick="setActive(this)"> <i class="fa-solid fa-calendar-check"></i>
+                <button class="icon-button" id="dash-app-btn" onclick="setActive(this)"> <i
+                        class="fa-solid fa-calendar-check"></i>
                     Appointment
                 </button>
                 <button class="icon-button" onclick="setActive(this)"> <i class="fa-solid fa-user-tie"></i> Customers
@@ -231,44 +232,45 @@
             </div>
         </div><br>
 
-        <div id="input-fields">
-            <select name="Admn-id" id="app-admin-id" class="combo-box">
-                <option value="">Admin ID</option>
-                <option value="Adm001">Admin 01</option>
-                <option value="Adm002">Admin 02</option>
-                <option value="Adm003">Admin 03</option>
-            </select>
+        <div id="appointment-body">
+            <div id="input-fields">
+                <select name="Admn-id" id="app-admin-id" class="combo-box">
+                    <option value="">Admin ID</option>
+                    <option value="Adm001">Admin 01</option>
+                    <option value="Adm002">Admin 02</option>
+                    <option value="Adm003">Admin 03</option>
+                </select>
 
-            <input type="text" id="app-cus-name" class="combo-box" placeholder="Customer Name">
+                <input type="text" id="app-cus-name" class="combo-box" placeholder="Customer Name">
 
-            <input type="number" id="app-cus-mobile" class="combo-box" placeholder="Customer Mobile">
+                <input type="number" id="app-cus-mobile" class="combo-box" placeholder="Customer Mobile">
 
-            <input type="datetime-local" id="app-date-time" class="combo-box">
-        </div> <br>
+                <input type="datetime-local" id="app-date-time" class="combo-box">
+            </div> <br>
 
-        <div id="crud-btn-container">
-            <button id="appo-add" class="crud-btn">Add</button>
-            <button id="appo-update" class="crud-btn">update</button>
-            <button id="appo-search" class="crud-btn">Search</button>
-            <button id="appo-delete" class="crud-btn">Delete</button>
-        </div><br>
+            <div id="crud-btn-container">
+                <button id="appo-add" class="crud-btn">Add</button>
+                <button id="appo-update" class="crud-btn">update</button>
+                <button id="appo-search" class="crud-btn">Search</button>
+                <button id="appo-delete" class="crud-btn">Delete</button>
+            </div><br>
 
-        <table id="table-manage">
-            <thead id="table-thead">
-                <tr>
-                    <th>Appo. ID</th>
-                    <th>Admin ID</th>
-                    <th>Customer</th>
-                    <th>Mobile</th>
-                    <th>Date & Time</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+            <table id="table-manage">
+                <thead id="table-thead">
+                    <tr>
+                        <th>Appo. ID</th>
+                        <th>Admin ID</th>
+                        <th>Customer</th>
+                        <th>Mobile</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
 
-            <tbody id="app-tbl">
-            </tbody>
+                <tbody id="app-tbl">
+                </tbody>
 
-        </table><br>
+            </table>
     </section>
 
     <section id="customer-section">

@@ -223,19 +223,19 @@ tbody tr:nth-child(even) {
 }
 
 #customer-section {
-        padding-top: 5%;
+    padding-top: 5%;
 }
 
-#agent-section{
-        padding-top: 5%;
+#agent-section {
+    padding-top: 5%;
 }
 
-#property-section{
-        padding-top: 5%;
+#property-section {
+    padding-top: 5%;
 }
 
 #payment-section {
-        padding-top: 5%;
+    padding-top: 5%;
 }
 
 #appointment-frame {

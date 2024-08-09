@@ -15,17 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 $(document).ready(function () {
   $("#dash-btn").addClass("active");
-
-  $(".icon-button").click(function () {
-    $(".icon-button").removeClass("active");
-    $(this).addClass("active");
-  });
 });
 
 $(".icon-button").click(function (event) {
   event.preventDefault();
-  $("#dashboard-body").hide();
-
   const clickedbtn = $(this).attr("id");
 
   switch (clickedbtn) {
@@ -33,9 +26,8 @@ $(".icon-button").click(function (event) {
       $("#dashboard-body").show();
       break;
     case "dash-app-btn":
-      $("#appointment-section").show();
       break;
     default:
       break;
   }
-})
+});
